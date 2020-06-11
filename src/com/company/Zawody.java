@@ -6,7 +6,7 @@ import java.util.List;
 public class Zawody {
     private String data;
     private String rodzajTurniaju;
-    private Druzyna druzyny[8];
+    private Druzyna druzyny[];
     private String nazwaSpotkania;
 
     public Zawody() {
