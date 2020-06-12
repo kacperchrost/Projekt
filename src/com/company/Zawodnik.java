@@ -6,11 +6,11 @@ import java.util.Scanner;
 import java.util.LinkedList;
 
 public class Zawodnik extends Osoba{
-    protected LinkedList<Osoba> zawodnicy = new LinkedList<>();
+    protected LinkedList<Osoba> zawodnicy;
     private int id=0;
     Scanner podaj=new Scanner(System.in);
     public Zawodnik(){
-
+        zawodnicy = new LinkedList<>();
     }
     public void dodaj(){
         Osoba zawodnik = new Osoba();

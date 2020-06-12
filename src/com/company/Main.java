@@ -6,6 +6,14 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.IOException;
+
+/**
+ *
+ * @author
+ * @throws Exception jezeli nie zostanie odnaleziony szukany plik lub index
+ *
+ */
 
 public class Main {
 
@@ -55,15 +63,15 @@ public class Main {
                                 case 1:
                                     for (int i=0; i<8; i++)
                                     {
-                                        turniej.dodajDruzyne(druzyna.dodajZawodnikow(siatkowka.getWielkoscDruzyny(), zawodnik.getZawodnicy()));
+                                        //turniej.dodajDruzyne(druzyna.dodajZawodnikow(siatkowka.getWielkoscDruzyny(), zawodnik.getZawodnicy()));
                                     }
 
                                     break;
                                 case 2:
-
+                                    turniej.dodajSedziego(sedzia);
                                     break;
                                 case 3:
-
+                                    turniej.rozegrajTurniej();
                                     break;
                                 default:
                                     System.out.println("Zla opcja");
@@ -78,7 +86,6 @@ public class Main {
                         default:
                             System.out.println("Zla opcja");
                     }
-                    break;
                     break;
                 case 3:
                     break;
@@ -109,6 +116,13 @@ public class Main {
                 default:
                     System.out.println("Zla opcja");
             }
+            clearSccreen();
         }
     }
+
+    private static void clearSccreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
 }

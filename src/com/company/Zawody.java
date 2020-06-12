@@ -1,14 +1,18 @@
 package com.company;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
 public class Zawody {
     private String data;
     private String rodzajTurniaju;
     private Druzyna druzyny;
     private String nazwaSpotkania;
+    private LinkedList<Sedzia> baza;
 
     public Zawody() {
+        baza = new LinkedList<Sedzia>();
     }
-
     public String getData(){
         return data;
     }
@@ -33,8 +37,9 @@ public class Zawody {
     void rozegrajTurniej(){
 
     }
-    void dodajSedziego(){
-
+    void dodajSedziego(Sedzia sedzia){
+        //Iterator i = sedziowie.iterator();
+    baza.add(sedzia);
     }
 }
 

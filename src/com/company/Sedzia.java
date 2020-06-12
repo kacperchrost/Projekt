@@ -2,15 +2,18 @@ package com.company;
 import com.company.Osoba;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.LinkedList;
 
 public class Sedzia extends Osoba{
-    protected LinkedList<Osoba> sedziowie = new LinkedList<>();
+    //protected LinkedList<Osoba> sedziowie;
+    protected Queue<Osoba> sedziowie;
     private int id=0;
+    private int i;
     Scanner podaj=new Scanner(System.in);
     public Sedzia(){
-
+        sedziowie = new LinkedList<>();
     }
     public void dodaj(){
         Osoba sedzia = new Osoba();
@@ -23,6 +26,7 @@ public class Sedzia extends Osoba{
         sedzia.setNazwisko(nazwisko);
         sedzia.setId(++id);
         sedziowie.add(sedzia);
+        i++;
     }
     public void usun(){
         System.out.println("Znasz Id sędziego którego chesz usunać? ");
@@ -88,6 +92,7 @@ public class Sedzia extends Osoba{
             sedzia.setNazwisko(nazwisko);
             sedzia.setId(++id);
             sedziowie.add(sedzia);
+            i++;
         }
     }
     public void usunPom(){
@@ -101,5 +106,6 @@ public class Sedzia extends Osoba{
             }
         }
         sedziowie.remove(usun-1);
+        i--;
     }
 }
