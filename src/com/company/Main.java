@@ -3,13 +3,25 @@ package com.company;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner scan = new Scanner(System.in);
         int opcje;
 
+        //miejsce na sprawdzanie czy to działa
+        Sedzia sedzia = new Sedzia();
+        sedzia.wczytajZPlikuS();
+        sedzia.przeglad();
+        sedzia.dodaj();
+        sedzia.przeglad();
+        sedzia.usun();
+        sedzia.przeglad();
+        //koniec sprawdzania czy to działa
         while (true)
         {
             System.out.println("[1]Plazownie");
@@ -31,6 +43,7 @@ public class Main {
                 case 4:
                     break;
                 case 5:
+
                     break;
                 case 0:
                     return;

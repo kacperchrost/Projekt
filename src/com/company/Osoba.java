@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Osoba {
 
-    private String imie;
+    protected String imie;
     private String nazwisko;
-
+    private int id;
     public Osoba()
     {
 
@@ -19,6 +19,11 @@ public class Osoba {
     public String getNazwisko(){
         return nazwisko;
     }
+
+    public int getId() {
+        return id;
+    }
+
     public void setImie(String imie) {
         this.imie = imie;
     }
@@ -26,4 +31,7 @@ public class Osoba {
         this.nazwisko = nazwisko;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }
