@@ -24,7 +24,7 @@ public class Zawodnik extends Osoba{
         zawodnik.setId(++id);
         zawodnicy.add(zawodnik);
     }
-    public void usun() throws FileNotFoundException {                       //dodać wyjątek
+    public void usun() throws Exception {
         System.out.println("Znasz Id zawodnika którego chesz usunać? ");
         System.out.println("[1] Tak ");
         System.out.println("[2] Nie ");
@@ -36,13 +36,23 @@ public class Zawodnik extends Osoba{
             {
                 case 1:
                     System.out.println("Podaj Id zawodnika do usuniecia:  ");
-                    usunPom();                                                      //dodać wyjątek
+                    try{
+                        usunPom();
+                    }
+                    catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 2:
                     System.out.println("Oto lista zawodnikow:   ");
                     przeglad();
                     System.out.println("Podaj Id zawodnika do usuniecia:  ");
-                    usunPom();                                                       //dodać wyjątek
+                    try{
+                        usunPom();
+                    }
+                    catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 default:
                     System.out.println("Zla opcja");
@@ -57,7 +67,15 @@ public class Zawodnik extends Osoba{
         }
     }
     public void wczytajZPlikuS() throws FileNotFoundException {
-        Scanner plik = new Scanner(new File("zawodnicy.txt"));
+        Scanner plik = null;
+        try{
+            plik = new Scanner(new File("zawodnicy.txt"));
+            Scanner scan = new Scanner(String.valueOf(plik));
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Blad pliku: "+e.getMessage());
+            System.exit(1);
+        }
         String imie, nazwisko, zdanie;
         while(plik.hasNext())
         {

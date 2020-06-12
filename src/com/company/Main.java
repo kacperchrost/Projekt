@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         Sedzia sedzia = new Sedzia();
         sedzia.wczytajZPlikuS();
