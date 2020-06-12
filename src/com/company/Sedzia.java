@@ -14,9 +14,10 @@ public class Sedzia extends Osoba{
     public void usun(){
 
     }
-   // public List<Osoba> przeglad(){ return List <Osoba>; }
+    public List<Osoba> przeglad(){
+        return List<Osoba>;
+    }
     public void wczytajZPlikuS(){
 
     }
 }
-

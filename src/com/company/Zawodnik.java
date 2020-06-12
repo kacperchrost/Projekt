@@ -14,8 +14,8 @@ public class Zawodnik extends Osoba{
     public void usun(){
 
     }
-    public List<Osoba> przeglad(){
-        return lista;
+    public void przeglad(){
+
     }
     public void wczytajZPlikuZ(){
 
