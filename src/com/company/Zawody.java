@@ -1,6 +1,10 @@
 package com.company;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Zawody {
+    private LinkedList rozgrywka = new LinkedList();
     private String data;
     private String rodzajTurniaju;
     private Druzyna druzyny;
@@ -28,6 +32,10 @@ public class Zawody {
         this.nazwaSpotkania=nazwaSpotkania;
     }
     void dodajTurniej(){
+
+    }
+    void dodajDruzyne(List druzyna){
+        rozgrywka.add(druzyna);
 
     }
     void rozegrajTurniej(){

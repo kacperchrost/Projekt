@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Siatkowka {
-    private int wielkoscDruzyny;
+    private int wielkoscDruzyny=6;
 
     public Siatkowka(){
 

@@ -24,7 +24,7 @@ public class Sedzia extends Osoba{
         sedzia.setId(++id);
         sedziowie.add(sedzia);
     }
-    public void usun() throws FileNotFoundException {                       //dodać wyjątek
+    public void usun() {                       //dodać wyjątek
         System.out.println("Znasz Id sędziego którego chesz usunać? ");
         System.out.println("[1] Tak ");
         System.out.println("[2] Nie ");

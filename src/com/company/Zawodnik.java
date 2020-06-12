@@ -2,6 +2,7 @@ package com.company;
 import com.company.Osoba;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.LinkedList;
 
@@ -83,5 +84,9 @@ public class Zawodnik extends Osoba{
             }
         }
         zawodnicy.remove(usun-1);
+    }
+
+    public List getZawodnicy(){
+        return zawodnicy;
     }
 }
