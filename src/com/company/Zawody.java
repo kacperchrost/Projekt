@@ -1,14 +1,17 @@
 package com.company;
 
+import java.util.LinkedList;
+
 public class Zawody {
     private String data;
     private String rodzajTurniaju;
     private Druzyna druzyny;
     private String nazwaSpotkania;
+    protected LinkedList<Osoba> baza;
 
     public Zawody() {
+        baza = new LinkedList<Osoba>();
     }
-
     public String getData(){
         return data;
     }
@@ -33,9 +36,11 @@ public class Zawody {
     void rozegrajTurniej(){
 
     }
-    void dodajSedziego(){
-
+    /*
+    void dodajSedziego(Sedzia sedzia){
+        baza.add(sedzia);
     }
+     */
 }
 
 
