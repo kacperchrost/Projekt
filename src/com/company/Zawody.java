@@ -8,7 +8,7 @@ public class Zawody {
     private String rodzajTurniaju;
     private Druzyna druzyny;
     private String nazwaSpotkania;
-    private LinkedList<Sedzia> baza;
+    protected LinkedList<Sedzia> baza;
 
     public Zawody() {
         baza = new LinkedList<Sedzia>();
@@ -37,10 +37,11 @@ public class Zawody {
     void rozegrajTurniej(){
 
     }
+    /*
     void dodajSedziego(Sedzia sedzia){
-        //Iterator i = sedziowie.iterator();
-    baza.add(sedzia);
+        baza.add(sedzia);
     }
+     */
 }
 
 

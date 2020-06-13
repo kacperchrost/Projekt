@@ -7,11 +7,11 @@ public class Druzyna {
     private String nazwa;
     private int liczbaWygranych;
     private int id;
-    private LinkedList<Zawodnik> zawodnicy = new LinkedList<Zawodnik>();
+    private LinkedList<Zawodnik> zawodnicy;
     private int miejsceWTabeli;
 
     public Druzyna(){
-
+        zawodnicy = new LinkedList<Zawodnik>();
     }
 
     public String getNazwa(){

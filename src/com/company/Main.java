@@ -53,7 +53,7 @@ public class Main {
                         case 1:
                             Zawody turniej = new Zawody();
 
-                            System.out.println("[1]Przygotuj druzyny.");
+                            System.out.println("[1]Przygotuj turniej.");
                             System.out.println("[2]Dodaj sedziego pomocniczego.");
                             System.out.println("[3]Rozegraj turniej.");
 
@@ -68,7 +68,7 @@ public class Main {
 
                                     break;
                                 case 2:
-                                    turniej.dodajSedziego(sedzia);
+                                    siatkowka.dodajSedziegoPomocniczego(turniej);
                                     break;
                                 case 3:
                                     turniej.rozegrajTurniej();
@@ -90,6 +90,7 @@ public class Main {
                 case 3:
                     break;
                 case 4:
+
                     break;
                 case 5:
                     System.out.println("[1]Dodaj sedziego.");
