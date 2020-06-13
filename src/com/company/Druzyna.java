@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class Druzyna {
     private String nazwa;
@@ -39,8 +38,12 @@ public class Druzyna {
 
         return liczbaWygranych;
     }
-    public List<Zawodnik> dodajZawodnikow(int wielkoscDruzyny){
+    public LinkedList dodajZawodnikow(int wielkoscDruzyny, Zawodnik zawodnik){
 
+        for (int i=0; i<wielkoscDruzyny; i++)
+        {
+            zawodnicy.add((Zawodnik) zawodnik.przeslijZawodnika());
+        }
         return zawodnicy;
     }
 }

@@ -1,9 +1,10 @@
 package com.company;
 
+import java.io.FileNotFoundException;
 import java.util.Random;
 
 public class Siatkowka extends Zawody {
-    private int wielkoscDruzyny;
+    private int wielkoscDruzyny=6;
     private int idsedziapom;
 
     public Siatkowka(){
@@ -27,4 +28,25 @@ public class Siatkowka extends Zawody {
     public int getWielkoscDruzyny(){
         return  wielkoscDruzyny;
     }
+
+    void dodajRozgrywke(Zawodnik zawodnik)  {
+        System.out.println("Wlasnie jest przygotowywany i rozgrywany turniej.");
+        System.out.println("Podaj nazwe turnieju");
+        String nazwa;
+        nazwa= scan.nextLine();
+        setNazwaTurnieju(nazwa);
+        for (int i=0; i<8; i++)
+        {
+            Druzyna druzyna = new Druzyna();
+            WynikiSpotkan wynik = new WynikiSpotkan();
+            wynik.wyslijDoPliku(druzyna.dodajZawodnikow(wielkoscDruzyny, zawodnik));
+
+        }
+    }
 }
+
+
+
+
+
+

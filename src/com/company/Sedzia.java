@@ -8,7 +8,6 @@ import java.util.LinkedList;
 public class Sedzia extends Osoba{
     public static LinkedList<Osoba> sedziowie;
     private int id=0;
-    private int idr;
     Scanner podaj=new Scanner(System.in);
     public Sedzia(){
         sedziowie = new LinkedList<>();
@@ -96,25 +95,19 @@ public class Sedzia extends Osoba{
      * @author KC
      * @return Zwraca id wylosowanego sedziego
      */
-    public static int getRandomId()
-    {
-        Random random = new Random();
-        //idr=random.nextInt(sedziowie.size())+1;
-        //return idr;
-        return random.nextInt(sedziowie.size())+1;
-    }
     public static Sedzia getSedzia(int id)
     {
         return (Sedzia) sedziowie.get(id);
     }
     public void usunPom(){
-        id = podaj.nextInt();
+        int idx;
+        idx = podaj.nextInt();
         int usun = 0;
         for (Object i : sedziowie)
         {
-            if (id==(((Osoba)i).getId()));
+            if (idx==(((Osoba)i).getId()));
             {
-                usun=id;
+                usun=idx;
             }
         }
         sedziowie.remove(usun-1);
