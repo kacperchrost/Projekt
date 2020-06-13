@@ -2,17 +2,16 @@ package com.company;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Druzyna {
     private String nazwa;
     private int liczbaWygranych;
     private int id;
-    private LinkedList<Zawodnik> druzyna = new LinkedList<Zawodnik>();
+    private LinkedList<Zawodnik> zawodnicy;
     private int miejsceWTabeli;
-    Scanner podaj=new Scanner(System.in);
-    public Druzyna(){
 
+    public Druzyna(){
+        zawodnicy = new LinkedList<Zawodnik>();
     }
 
     public String getNazwa(){
@@ -32,7 +31,7 @@ public class Druzyna {
     public void setMiejsceWTabeli (int miejsceWTabeli){
         this.miejsceWTabeli=miejsceWTabeli;
     }
-    public int generujId (int id){
+    public int generujId (){
 
         return id;
     }
@@ -40,15 +39,9 @@ public class Druzyna {
 
         return liczbaWygranych;
     }
-    public List dodajZawodnikow(int wielkoscDruzyny, List zawodnicy){
-        for (int i=0; i<wielkoscDruzyny; i++)
-        {
-            druzyna.add((Zawodnik) zawodnicy.get(i));
-        }
-        System.out.println("Podaj nazwe druzyny: ");
-        nazwa= podaj.nextLine();
-        generujId(++id);
-        return druzyna;
+    public List<Zawodnik> dodajZawodnikow(int wielkoscDruzyny){
+
+        return zawodnicy;
     }
 }
 

@@ -2,16 +2,15 @@ package com.company;
 import com.company.Osoba;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.List;
 import java.util.Scanner;
 import java.util.LinkedList;
 
 public class Zawodnik extends Osoba{
-    protected LinkedList<Osoba> zawodnicy = new LinkedList<>();
+    protected LinkedList<Osoba> zawodnicy;
     private int id=0;
     Scanner podaj=new Scanner(System.in);
     public Zawodnik(){
-
+        zawodnicy = new LinkedList<>();
     }
     public void dodaj(){
         Osoba zawodnik = new Osoba();
@@ -25,25 +24,35 @@ public class Zawodnik extends Osoba{
         zawodnik.setId(++id);
         zawodnicy.add(zawodnik);
     }
-    public void usun() throws FileNotFoundException {                       //dodać wyjątek
-        System.out.println("Znasz Id zawodnika którego chesz usunać? ");
-        System.out.println("[1] Tak ");
-        System.out.println("[2] Nie ");
+    public void usun() throws Exception {
         int opcje, n=0;
-        opcje = podaj.nextInt();
         do{
+            System.out.println("Znasz Id zawodnika którego chesz usunać? ");
+            System.out.println("[1] Tak ");
+            System.out.println("[2] Nie ");
+            opcje = podaj.nextInt();
             n=0;
             switch(opcje)
             {
                 case 1:
                     System.out.println("Podaj Id zawodnika do usuniecia:  ");
-                    usunPom();                                                      //dodać wyjątek
+                    try{
+                        usunPom();
+                    }
+                    catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 2:
                     System.out.println("Oto lista zawodnikow:   ");
                     przeglad();
                     System.out.println("Podaj Id zawodnika do usuniecia:  ");
-                    usunPom();                                                       //dodać wyjątek
+                    try{
+                        usunPom();
+                    }
+                    catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 default:
                     System.out.println("Zla opcja");
@@ -58,7 +67,15 @@ public class Zawodnik extends Osoba{
         }
     }
     public void wczytajZPlikuS() throws FileNotFoundException {
-        Scanner plik = new Scanner(new File("zawodnicy.txt"));
+        Scanner plik = null;
+        try{
+            plik = new Scanner(new File("zawodnicy.txt"));
+            Scanner scan = new Scanner(String.valueOf(plik));
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Blad pliku: "+e.getMessage());
+            System.exit(1);
+        }
         String imie, nazwisko, zdanie;
         while(plik.hasNext())
         {
@@ -84,9 +101,5 @@ public class Zawodnik extends Osoba{
             }
         }
         zawodnicy.remove(usun-1);
-    }
-
-    public List getZawodnicy(){
-        return zawodnicy;
     }
 }
