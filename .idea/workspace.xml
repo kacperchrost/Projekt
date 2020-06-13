@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3b7924bc-f970-4b14-ae11-974ae495e20c" name="Default Changelist" comment="Projekt v1.1&#10;-działają sędziowie" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Kacper_test" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dELCHOQFGiLWsuadGGuGRZUNa6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="ProjektXDDDD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b7924bc-f970-4b14-ae11-974ae495e20c" name="Default Changelist" comment="" />
+      <created>1591985176883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591985176883</updated>
+    </task>
+    <task id="LOCAL-00001" summary="xd">
+      <created>1591987103115</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591987103115</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Próba zmiany LinkedList na Queue, próba dodawania sędziów do turnieju siatkowki, zmiana miejsc alokacji pamieci zeby dzialo sie to w konstruktorach">
+      <created>1591995480338</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591995480338</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Próba zmiany LinkedList na Queue, próba dodawania sędziów do turnieju siatkowki, zmiana miejsc alokacji pamieci zeby dzialo sie to w konstruktorach">
+      <created>1591996208593</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591996208593</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Niedziałające dodawanie sędziego pomocniczego">
+      <created>1592050402489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592050402489</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Projekt v1.1&#10;-działają sędziowie">
+      <created>1592053394784</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592053394784</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="xd" />
+    <MESSAGE value="Próba zmiany LinkedList na Queue, próba dodawania sędziów do turnieju siatkowki, zmiana miejsc alokacji pamieci zeby dzialo sie to w konstruktorach" />
+    <MESSAGE value="Niedziałające dodawanie sędziego pomocniczego" />
+    <MESSAGE value="Projekt v1.1&#10;-działają sędziowie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projekt v1.1&#10;-działają sędziowie" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="845" y="383" key="#Notifications" timestamp="1591995566756">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="845" y="383" key="#Notifications/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1591995566756" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1592052446876">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592052446876" />
+    <state width="1877" height="217" key="GridCell.Tab.0.bottom" timestamp="1592054376069">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592054376069" />
+    <state width="1877" height="217" key="GridCell.Tab.0.center" timestamp="1592054376069">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592054376069" />
+    <state width="1877" height="217" key="GridCell.Tab.0.left" timestamp="1592054376069">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592054376069" />
+    <state width="1877" height="217" key="GridCell.Tab.0.right" timestamp="1592054376069">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592054376069" />
+    <state x="199" y="131" key="MergeDialog" timestamp="1592052152741">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="199" y="131" key="MergeDialog/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592052152741" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1592052153729">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592052153729" />
+    <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1592052446876">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592052446876" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1592053406558">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592053406558" />
+    <state x="529" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1591995706601">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="529" y="254" key="VcsDiffUtil.ChangesDialog/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1591995706601" />
+    <state x="603" y="308" key="git4idea.merge.GitPullDialog" timestamp="1592054254887">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="603" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040/-1920.155.1920.1040@0.0.1920.1040" timestamp="1592054254887" />
+  </component>
+</project>
