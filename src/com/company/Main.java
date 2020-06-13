@@ -68,7 +68,7 @@ public class Main {
 
                                     break;
                                 case 2:
-                                    siatkowka.dodajSedziegoPomocniczego(turniej);
+                                    siatkowka.dodajSedziegoPomocniczego(turniej, sedzia);
                                     break;
                                 case 3:
                                     turniej.rozegrajTurniej();

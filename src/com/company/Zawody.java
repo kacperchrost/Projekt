@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Zawody {
@@ -8,10 +7,10 @@ public class Zawody {
     private String rodzajTurniaju;
     private Druzyna druzyny;
     private String nazwaSpotkania;
-    protected LinkedList<Sedzia> baza;
+    protected LinkedList<Osoba> baza;
 
     public Zawody() {
-        baza = new LinkedList<Sedzia>();
+        baza = new LinkedList<Osoba>();
     }
     public String getData(){
         return data;

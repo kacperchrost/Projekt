@@ -6,8 +6,8 @@ import java.util.List;
 public class Osoba {
 
     protected String imie;
-    private String nazwisko;
-    private int id;
+    protected String nazwisko;
+    protected int id;
     public Osoba()
     {
 

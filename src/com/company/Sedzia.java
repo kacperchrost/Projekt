@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.LinkedList;
 
 public class Sedzia extends Osoba{
-    protected static LinkedList<Osoba> sedziowie;
+    public static LinkedList<Osoba> sedziowie;
     private int id=0;
     private int idr;
     Scanner podaj=new Scanner(System.in);

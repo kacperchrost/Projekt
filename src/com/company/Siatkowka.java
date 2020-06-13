@@ -1,7 +1,6 @@
 package com.company;
 
-import com.company.Sedzia;
-import java.util.Scanner;
+import java.util.Random;
 
 public class Siatkowka extends Zawody {
     private int wielkoscDruzyny;
@@ -10,12 +9,20 @@ public class Siatkowka extends Zawody {
     public Siatkowka(){
 
     }
-    public void dodajSedziegoPomocniczego(Zawody turniej){
-
-        idsedziapom=Sedzia.getRandomId();
-        turniej.baza.add(Sedzia.getSedzia(idsedziapom));
+    public void dodajSedziegoPomocniczego(Zawody turniej, Sedzia sedzia){
+        int id = 0;
+        sedzia.przeglad();
+        for(int i=0;i<2;i++)
+        {
+            Random r = new Random();
+            id = r.nextInt(sedzia.sedziowie.size());
+            turniej.baza.add( sedzia.sedziowie.get(id));
+        }
+        System.out.println(turniej.baza.get(0).imie);
+        System.out.println(turniej.baza.get(0).nazwisko);
+        System.out.println(turniej.baza.get(1).imie);
+        System.out.println(turniej.baza.get(1).nazwisko);
         System.out.println("Pomyslnie dodano sedziego pomocniczego ");
-
     }
     public int getWielkoscDruzyny(){
         return  wielkoscDruzyny;
