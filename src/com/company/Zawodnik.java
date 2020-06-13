@@ -9,6 +9,8 @@ public class Zawodnik extends Osoba{
     protected LinkedList<Osoba> zawodnicy;
     private int id=0;
     Scanner podaj=new Scanner(System.in);
+    private int iluWyslanych=-1;
+    private int max=0;
     public Zawodnik(){
         zawodnicy = new LinkedList<>();
     }
@@ -23,6 +25,7 @@ public class Zawodnik extends Osoba{
         zawodnik.setNazwisko(nazwisko);
         zawodnik.setId(++id);
         zawodnicy.add(zawodnik);
+        max++;
     }
     public void usun() throws Exception {
         int opcje, n=0;
@@ -42,6 +45,7 @@ public class Zawodnik extends Osoba{
                     catch(Exception e){
                         System.out.println(e.getMessage());
                     }
+                    max--;
                     break;
                 case 2:
                     System.out.println("Oto lista zawodnikow:   ");
@@ -53,6 +57,7 @@ public class Zawodnik extends Osoba{
                     catch(Exception e){
                         System.out.println(e.getMessage());
                     }
+                    max--;
                     break;
                 default:
                     System.out.println("Zla opcja");
@@ -66,7 +71,7 @@ public class Zawodnik extends Osoba{
             System.out.println("Id:"+((Osoba)i).getId()+" "+((Osoba)i).getImie()+" "+((Osoba)i).getNazwisko());
         }
     }
-    public void wczytajZPlikuS() throws FileNotFoundException {
+    public void wczytajZPlikuZ() throws FileNotFoundException {
         Scanner plik = null;
         try{
             plik = new Scanner(new File("zawodnicy.txt"));
@@ -88,6 +93,7 @@ public class Zawodnik extends Osoba{
             zawodnik.setNazwisko(nazwisko);
             zawodnik.setId(++id);
             zawodnicy.add(zawodnik);
+            max++;
         }
     }
     public void usunPom(){
@@ -102,4 +108,11 @@ public class Zawodnik extends Osoba{
         }
         zawodnicy.remove(usun-1);
     }
+    public Osoba przeslijZawodnika(){
+        if (iluWyslanych==max)iluWyslanych=-1;
+        iluWyslanych++;
+        return zawodnicy.get(iluWyslanych);
+
+    }
+
 }

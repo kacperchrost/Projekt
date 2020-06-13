@@ -1,17 +1,14 @@
 package com.company;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Druzyna {
     private String nazwa;
     private int liczbaWygranych;
     private int id;
-    private LinkedList<Zawodnik> zawodnicy;
+
     private int miejsceWTabeli;
 
     public Druzyna(){
-        zawodnicy = new LinkedList<Zawodnik>();
+
     }
 
     public String getNazwa(){
@@ -31,6 +28,10 @@ public class Druzyna {
     public void setMiejsceWTabeli (int miejsceWTabeli){
         this.miejsceWTabeli=miejsceWTabeli;
     }
+    public void setNazwa(String nazwa){
+        this.nazwa=nazwa;
+    }
+
     public int generujId (){
 
         return id;
@@ -38,10 +39,6 @@ public class Druzyna {
     public int zmienLiczbeWygranych(int liczbaWygranych){
 
         return liczbaWygranych;
-    }
-    public List<Zawodnik> dodajZawodnikow(int wielkoscDruzyny){
-
-        return zawodnicy;
     }
 }
 

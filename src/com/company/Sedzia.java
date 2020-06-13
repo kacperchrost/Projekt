@@ -70,6 +70,7 @@ public class Sedzia extends Osoba{
         Scanner plik = null;
         try{
             plik = new Scanner(new File("sedziowie.txt"));
+            Scanner scan = new Scanner(String.valueOf(plik));
         }
         catch(FileNotFoundException e){
             System.out.println("Blad pliku: "+e.getMessage());
@@ -88,15 +89,19 @@ public class Sedzia extends Osoba{
             sedzia.setId(++id);
             sedziowie.add(sedzia);
         }
-        plik.close();
     }
 
+    /**
+     * @author KC
+     * @return Zwraca id wylosowanego sedziego
+     */
     public static Sedzia getSedzia(int id)
     {
         return (Sedzia) sedziowie.get(id);
     }
     public void usunPom(){
-        int idx = podaj.nextInt();
+        int idx;
+        idx = podaj.nextInt();
         int usun = 0;
         for (Object i : sedziowie)
         {

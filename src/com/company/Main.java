@@ -20,9 +20,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         Sedzia sedzia = new Sedzia();
-        Zawodnik zawodnik = new Zawodnik();
-        Druzyna druzyna = new Druzyna();
-        Siatkowka siatkowka = new Siatkowka();
         sedzia.wczytajZPlikuS();
         int opcje;
 
@@ -41,6 +38,7 @@ public class Main {
             switch(opcje)
             {
                 case 1:
+
                     break;
                 case 2:
                     System.out.println("Wybierz dyscypline.");
@@ -51,31 +49,12 @@ public class Main {
                     switch(opcje)
                     {
                         case 1:
-                            Zawody turniej = new Zawody();
-
-                            System.out.println("[1]Przygotuj turniej.");
-                            System.out.println("[2]Dodaj sedziego pomocniczego.");
-                            System.out.println("[3]Rozegraj turniej.");
-
-                            opcje = scan.nextInt();
-                            switch(opcje)
-                            {
-                                case 1:
-                                    for (int i=0; i<8; i++)
-                                    {
-                                        //turniej.dodajDruzyne(druzyna.dodajZawodnikow(siatkowka.getWielkoscDruzyny(), zawodnik.getZawodnicy()));
-                                    }
-
-                                    break;
-                                case 2:
-                                    siatkowka.dodajSedziegoPomocniczego(turniej, sedzia);
-                                    break;
-                                case 3:
-                                    turniej.rozegrajTurniej();
-                                    break;
-                                default:
-                                    System.out.println("Zla opcja");
-                            }
+                            Siatkowka siatkowka = new Siatkowka();
+                            Zawody turniej = new Zawody("Siatkowka");
+                            turniej.dodajTurniej();                                 //metoda w Zawody
+                            siatkowka.dodajSedziegoPomocniczego(turniej, sedzia);
+                            turniej.rozegrajTurniej();
+                            turniej.przegladDruzyn();
                             break;
                         case 2:
 
@@ -113,6 +92,7 @@ public class Main {
                     }
                     break;
                 case 0:
+                    //WynikiSpotkan.zamknijPlik();
                     return;
                 default:
                     System.out.println("Zla opcja");
