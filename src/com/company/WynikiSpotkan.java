@@ -27,12 +27,8 @@ public class WynikiSpotkan extends Zawody {
      */
     public void wyslijDoPliku(Druzyna druzyna) throws FileNotFoundException{
         PrintWriter wyslij = null;
-        String nazwa;
-        System.out.println("Podaj nazwe pliku do ktorego chcesz wpisac wyniki.");
-        nazwa=scan.nextLine();
-        nazwa+="txt";
         try{
-            wyslij = new PrintWriter(new File(nazwa));
+            wyslij = new PrintWriter(new File("wyniki.txt"));
         }
         catch(FileNotFoundException ex){
             System.out.println("Blad pliku: "+ ex.getMessage());
