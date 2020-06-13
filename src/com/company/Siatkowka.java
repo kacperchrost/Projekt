@@ -16,7 +16,13 @@ public class Siatkowka extends Zawody {
         {
             Random r = new Random();
             id = r.nextInt(sedzia.sedziowie.size());
-            turniej.baza.add( sedzia.sedziowie.get(id));
+
+            if (baza.indexOf(sedzia.sedziowie.get(id))== -1) {
+                turniej.baza.add(sedzia.sedziowie.get(id));
+            }
+            else {
+                i--;
+            }
         }
         System.out.println(turniej.baza.get(0).imie);
         System.out.println(turniej.baza.get(0).nazwisko);

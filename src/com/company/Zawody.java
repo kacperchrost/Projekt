@@ -36,11 +36,7 @@ public class Zawody {
     void rozegrajTurniej(){
 
     }
-    /*
-    void dodajSedziego(Sedzia sedzia){
-        baza.add(sedzia);
-    }
-     */
+
 }
 
 
