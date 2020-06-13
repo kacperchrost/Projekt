@@ -1,18 +1,6 @@
 package com.company;
 
-import java.util.Scanner;
-
-public class PrzeciaganieLiny extends Rozgrywka{
-    private int wielkoscDruzyny=4;
-    private int dlugosc=8;
-    public PrzeciaganieLiny(){
-
-    }
-    public void dlugoscLiny(){
-        Scanner podaj=new Scanner(System.in);
-        System.out.println("Podaj dlugosc przeciaganej liny: ");
-        dlugosc = podaj.nextInt();
-    }
+public class Rozgrywka extends Zawody {
     public void dodajRozgrywke()  {
         System.out.println("Wlasnie jest przygotowywany i rozgrywany turniej.");
         System.out.println("Podaj nazwe turnieju");
@@ -29,8 +17,5 @@ public class PrzeciaganieLiny extends Rozgrywka{
             dodajDoListy(druzyna);
             wynik.wyslijDoPliku(druzyna);
         }
-    }
-    public int getWielkoscDruzyny(){
-        return  wielkoscDruzyny;
     }
 }

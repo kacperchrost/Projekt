@@ -10,14 +10,15 @@ public class Zawody {
     private String data;
     private String rodzajTurniaju;
     private String nazwaTurnieju;
-    protected LinkedList<Druzyna> druzyny;              //list druzyn danego turnieju
+    private static LinkedList<Druzyna> druzyny;              //list druzyn danego turnieju
     Scanner scan = new Scanner(System.in);
 
     public Zawody() {
-        druzyny = new LinkedList<Druzyna>();
+
     }
     public Zawody(String nazwa) {
         setRodzajTurnieju(nazwa);
+        druzyny = new LinkedList<>();
     }
     public String getData(){
         return data;
@@ -43,29 +44,30 @@ public class Zawody {
     }
 
     public void dodajTurniej()  {
-        if (rodzajTurniaju.equals("Siatkowka"))              //metoda w siatkowka
+        if (rodzajTurniaju.equals("Siatkowka"))              //metoda w Rozgrywka
         {
             Siatkowka siatkowka = new Siatkowka();
-            siatkowka.dodajRozgrywke(druzyny);
+            siatkowka.dodajRozgrywke();
         }
         if (rodzajTurniaju.equals("Dwa ognie"))
         {
             DwaOgnie dwaOgnie = new DwaOgnie();
-            //dwaOgnie.dodajRozgrywke();
+            dwaOgnie.dodajRozgrywke();
         }
         if (rodzajTurniaju.equals("Przeciaganie liny"))
         {
             PrzeciaganieLiny przeciaganieLiny = new PrzeciaganieLiny();
-            //przeciaganieLiny.dodajRozgrywke();
+            przeciaganieLiny.dodajRozgrywke();
         }
     }
     void rozegrajTurniej(){
 
     }
     public void przegladDruzyn (){
-        for (Object i : druzyny)
+
+        for(Object i : druzyny)
         {
-            System.out.println("Nazwa:"+((Druzyna)i).getNazwa());
+            System.out.println("Druzyna "+((Druzyna)i).getNazwa()+" Wygranych: "+((Druzyna)i).getLiczbaWygranych()+" co daje "+((Druzyna)i).getMiejsceWTabeli()+" miejsce w tabeli.");
         }
     }
 }

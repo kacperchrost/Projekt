@@ -1,3 +1,4 @@
+/*
 package com.company;
 import com.company.Osoba;
 import java.io.File;
@@ -71,7 +72,8 @@ public class Zawodnik extends Osoba{
             System.out.println("Id:"+((Osoba)i).getId()+" "+((Osoba)i).getImie()+" "+((Osoba)i).getNazwisko());
         }
     }
-    public void wczytajZPlikuZ() throws FileNotFoundException {
+    */
+/*public void wczytajZPlikuZ() throws FileNotFoundException {
         Scanner plik = null;
         try{
             plik = new Scanner(new File("zawodnicy.txt"));
@@ -95,8 +97,10 @@ public class Zawodnik extends Osoba{
             zawodnicy.add(zawodnik);
             max++;
         }
-    }
-    public void usunPom(){
+    }*//*
+
+    */
+/*public void usunPom(){
         id = podaj.nextInt();
         int usun = 0;
         for (Object i : zawodnicy)
@@ -107,12 +111,15 @@ public class Zawodnik extends Osoba{
             }
         }
         zawodnicy.remove(usun-1);
-    }
-    public Osoba przeslijZawodnika(){
+    }*//*
+
+   */
+/* public Osoba przeslijZawodnika(){
         if (iluWyslanych==max)iluWyslanych=-1;
         iluWyslanych++;
         return zawodnicy.get(iluWyslanych);
 
-    }
+    }*//*
 
-}
+
+}*/

@@ -50,17 +50,25 @@ public class Main {
                     {
                         case 1:
                             Siatkowka siatkowka = new Siatkowka();
-                            Zawody turniej = new Zawody("Siatkowka");
-                            turniej.dodajTurniej();                                 //metoda w Zawody
-                            siatkowka.dodajSedziegoPomocniczego(turniej, sedzia);
-                            turniej.rozegrajTurniej();
-                            turniej.przegladDruzyn();
+                            Zawody turniej1 = new Zawody("Siatkowka");
+                            turniej1.dodajTurniej();                                 //metoda w Zawody
+                            siatkowka.dodajSedziegoPomocniczego(turniej1, sedzia);
+                            turniej1.rozegrajTurniej();
+                            turniej1.przegladDruzyn();
                             break;
                         case 2:
-
+                            PrzeciaganieLiny przeciaganieLiny = new PrzeciaganieLiny();
+                            Zawody turniej2 = new Zawody("Dwa ognie");
+                            turniej2.dodajTurniej();                                 //metoda w Zawody
+                            turniej2.rozegrajTurniej();
+                            turniej2.przegladDruzyn();
                             break;
                         case 3:
-
+                            DwaOgnie dwaOgnie = new DwaOgnie();
+                            Zawody turniej3 = new Zawody("Przeciaganie liny");
+                            turniej3.dodajTurniej();                                 //metoda w Zawody
+                            turniej3.rozegrajTurniej();
+                            turniej3.przegladDruzyn();
                             break;
                         default:
                             System.out.println("Zla opcja");

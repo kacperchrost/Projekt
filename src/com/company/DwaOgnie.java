@@ -1,7 +1,7 @@
 package com.company;
 
-public class DwaOgnie {
-    private int wielkoscDruzyny;
+public class DwaOgnie extends Rozgrywka{
+    private int wielkoscDruzyny=10;
 
     public DwaOgnie(){
 
