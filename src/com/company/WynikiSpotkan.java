@@ -9,13 +9,22 @@ import java.util.Scanner;
 
 public class WynikiSpotkan extends Zawody {
     private int idSpotkania;
-    private LinkedList<Zawodnik> listaSpotkan; //nie wiem co tu wpisać narazie
+    private LinkedList<Zawody> listaSpotkan; //nie wiem co tu wpisać narazie
     private String wynik;
     private String nazwapliku;
     private Scanner scan = new Scanner(System.in);
+    PrintWriter wyslij = null;
 
     public WynikiSpotkan(){
-        listaSpotkan = new LinkedList<Zawodnik>();
+        listaSpotkan = new LinkedList<Zawody>();
+        try{
+            wyslij = new PrintWriter(new File("wyniki.txt"));
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("Blad pliku: "+ ex.getMessage());
+            ex.printStackTrace();
+            System.exit(1);
+        }
     }
 
     /**
@@ -25,17 +34,17 @@ public class WynikiSpotkan extends Zawody {
      * @throws FileNotFoundException wyrzuca oraz obsługuje wyjątek gdy program ma problem z plikiem
      * Wpisuje wyniki do pliku
      */
-    public void wyslijDoPliku(LinkedList<Druzyna> druzyna) {
-        PrintWriter wyslij = null;
-        try{
-            wyslij = new PrintWriter(new File("wyniki.txt"));
-        }
-        catch(FileNotFoundException ex){
-            System.out.println("Blad pliku: "+ ex.getMessage());
-            System.exit(1);
-        }
+    public void wyslijDoPliku(Druzyna druzyna) {
         wyslij.println(druzyna);
 
+
+    }
+    public void wyslijDoPliku(String napis, String nazwa)  {
+        //wyslij.print(napis+" ");
+        System.out.println(napis+nazwa);
+        //wyslij.println(nazwa);
+        wyslij.append(napis+" ");
+        wyslij.append(nazwa);
     }
 
     /**
@@ -62,5 +71,8 @@ public class WynikiSpotkan extends Zawody {
             System.out.println(wynik);
         }
         wyniki.close();
+    }
+    public void zamknijPlik(){
+        wyslij.close();
     }
 }

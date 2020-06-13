@@ -20,9 +20,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         Sedzia sedzia = new Sedzia();
-        Zawodnik zawodnik = new Zawodnik();
         sedzia.wczytajZPlikuS();
-        zawodnik.wczytajZPlikuZ();
         int opcje;
 
         while (true)
@@ -53,9 +51,10 @@ public class Main {
                         case 1:
                             Siatkowka siatkowka = new Siatkowka();
                             Zawody turniej = new Zawody("Siatkowka");
-                            turniej.dodajTurniej(zawodnik);                                 //metoda w Zawody
+                            turniej.dodajTurniej();                                 //metoda w Zawody
                             siatkowka.dodajSedziegoPomocniczego(turniej, sedzia);
                             turniej.rozegrajTurniej();
+                            turniej.przegladDruzyn();
                             break;
                         case 2:
 
@@ -93,6 +92,7 @@ public class Main {
                     }
                     break;
                 case 0:
+                    //WynikiSpotkan.zamknijPlik();
                     return;
                 default:
                     System.out.println("Zla opcja");
