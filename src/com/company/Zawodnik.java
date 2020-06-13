@@ -6,11 +6,11 @@ import java.util.Scanner;
 import java.util.LinkedList;
 
 public class Zawodnik extends Osoba{
-    protected LinkedList<Osoba> zawodnicy = new LinkedList<>();
+    protected LinkedList<Osoba> zawodnicy;
     private int id=0;
     Scanner podaj=new Scanner(System.in);
     public Zawodnik(){
-
+        zawodnicy = new LinkedList<>();
     }
     public void dodaj(){
         Osoba zawodnik = new Osoba();
@@ -25,12 +25,12 @@ public class Zawodnik extends Osoba{
         zawodnicy.add(zawodnik);
     }
     public void usun() throws Exception {
-        System.out.println("Znasz Id zawodnika którego chesz usunać? ");
-        System.out.println("[1] Tak ");
-        System.out.println("[2] Nie ");
         int opcje, n=0;
-        opcje = podaj.nextInt();
         do{
+            System.out.println("Znasz Id zawodnika którego chesz usunać? ");
+            System.out.println("[1] Tak ");
+            System.out.println("[2] Nie ");
+            opcje = podaj.nextInt();
             n=0;
             switch(opcje)
             {
