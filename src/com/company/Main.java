@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Scanner;
-import com.company.Plazownie;
 
 /**
  *
@@ -54,7 +53,7 @@ public class Main {
                                 WynikiSpotkan wyniki1 = new WynikiSpotkan("Siatkowka");
                                 turniej1.dodajTurniej(turniej1);
                                 siatkowka.dodajSedziegoPomocniczego(sedzia, wyniki1);
-                                rozgrywka(turniej1, wyniki1);
+                                rozgrywka(turniej1, wyniki1, sedzia);
                                 break;
                             case "2":
                                 PrzeciaganieLiny przeciaganieLiny = new PrzeciaganieLiny();
@@ -62,7 +61,7 @@ public class Main {
                                 WynikiSpotkan wyniki2 = new WynikiSpotkan("Przeciaganie liny");
                                 turniej2.dodajTurniej(turniej2);
                                 przeciaganieLiny.dlugoscLiny(wyniki2);
-                                rozgrywka(turniej2, wyniki2);
+                                rozgrywka(turniej2, wyniki2, sedzia);
                                 break;
                             case "3":
                                 DwaOgnie dwaOgnie = new DwaOgnie();
@@ -70,7 +69,7 @@ public class Main {
                                 WynikiSpotkan wyniki3 = new WynikiSpotkan("Dwa Ognie");
                                 turniej3.dodajTurniej(turniej3);
                                 dwaOgnie.iloscPilek(wyniki3);
-                                rozgrywka(turniej3, wyniki3);
+                                rozgrywka(turniej3, wyniki3, sedzia);
                                 break;
                             default:
                                 System.out.println("Zla opcja");
@@ -179,11 +178,17 @@ public class Main {
             }
         }while(n==0);
     }
-    public static void rozgrywka(Zawody turniej, WynikiSpotkan wyniki) {
+    public static void rozgrywka(Zawody turniej, WynikiSpotkan wyniki, Sedzia sedzia) {
+        int id;
         wyniki.wyslijDoPliku(1);
         zamianaDruzyny(turniej);
         wyniki.wyslijDoPliku("Nazwa turnieju: ");
         wyniki.wyslijDoPliku(turniej.getNazwaTurnieju(),1);
+        wyniki.wyslijDoPliku("Turniej sedziował: ");
+        sedzia.przeslijSedziego();
+        id=sedzia.przeslijSedziego();
+        wyniki.wyslijDoPliku(sedzia.sedziowie.get(id).imie);
+        wyniki.wyslijDoPliku(sedzia.sedziowie.get(id).nazwisko, 1);
         wyniki.wyslijDoPliku("Druzyny biorace udzial: ", 1);
         turniej.rozegrajTurniej();
         System.out.println("Turniej zakonczyl sie z nastepujacymi wynikami:");
