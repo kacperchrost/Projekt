@@ -53,10 +53,12 @@ public class Zawody {
         {
             DwaOgnie dwaOgnie = new DwaOgnie();
             dwaOgnie.dodajRozgrywke();
+            dwaOgnie.iloscPilek();
         }
         if (rodzajTurniaju.equals("Przeciaganie liny"))
         {
             PrzeciaganieLiny przeciaganieLiny = new PrzeciaganieLiny();
+            przeciaganieLiny. dlugoscLiny();
             przeciaganieLiny.dodajRozgrywke();
         }
     }

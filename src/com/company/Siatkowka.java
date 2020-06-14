@@ -11,13 +11,12 @@ public class Siatkowka extends Rozgrywka {
     public Siatkowka(){
 
     }
-    public void dodajSedziegoPomocniczego(Zawody turniej, Sedzia sedzia){
+    public void dodajSedziegoPomocniczego(Sedzia sedzia){
         int id = 0;
         System.out.println("Do tego turnieju przydzielono 2 sedziow pomocniczych:");
         for(int i=0;i<2;i++)
         {
-            Random r = new Random();
-            id = r.nextInt(sedzia.sedziowie.size());
+            id=sedzia.przeslijSedziego();
             WynikiSpotkan wynik = new WynikiSpotkan();
             wynik.wyslijDoPliku("Imie: ", sedzia.sedziowie.get(id).imie);
             wynik.wyslijDoPliku("Nazwisko: ", sedzia.sedziowie.get(id).nazwisko);

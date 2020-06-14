@@ -13,24 +13,11 @@ public class PrzeciaganieLiny extends Rozgrywka{
         System.out.println("Podaj dlugosc przeciaganej liny: ");
         dlugosc = podaj.nextInt();
     }
-    public void dodajRozgrywke()  {
-        System.out.println("Wlasnie jest przygotowywany i rozgrywany turniej.");
-        System.out.println("Podaj nazwe turnieju");
-        String nazwa;
-        nazwa= scan.nextLine();
-        setNazwaTurnieju(nazwa);
-        for (int i=0; i<8; i++)
-        {
-            Druzyna druzyna = new Druzyna();
-            WynikiSpotkan wynik = new WynikiSpotkan();
-            System.out.println("Podaj nazwe druzyny nr: "+(i+1));
-            nazwa= scan.nextLine();
-            druzyna.setNazwa(nazwa);
-            dodajDoListy(druzyna);
-            wynik.wyslijDoPliku(druzyna);
-        }
-    }
     public int getWielkoscDruzyny(){
         return  wielkoscDruzyny;
+    }
+
+    public int getDlugosc() {
+        return dlugosc;
     }
 }

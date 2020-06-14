@@ -52,9 +52,10 @@ public class Main {
                             Siatkowka siatkowka = new Siatkowka();
                             Zawody turniej1 = new Zawody("Siatkowka");
                             turniej1.dodajTurniej();                                 //metoda w Zawody
-                            siatkowka.dodajSedziegoPomocniczego(turniej1, sedzia);
+                            siatkowka.dodajSedziegoPomocniczego(sedzia);
                             turniej1.rozegrajTurniej();
                             turniej1.przegladDruzyn();
+
                             break;
                         case 2:
                             PrzeciaganieLiny przeciaganieLiny = new PrzeciaganieLiny();
