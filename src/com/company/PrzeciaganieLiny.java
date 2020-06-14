@@ -2,8 +2,8 @@ package com.company;
 
 import java.util.Scanner;
 
-public class PrzeciaganieLiny {
-    private int wielkoscDruzyny;
+public class PrzeciaganieLiny extends Rozgrywka{
+    private int wielkoscDruzyny=4;
     private int dlugosc=8;
     public PrzeciaganieLiny(){
 
@@ -15,5 +15,9 @@ public class PrzeciaganieLiny {
     }
     public int getWielkoscDruzyny(){
         return  wielkoscDruzyny;
+    }
+
+    public int getDlugosc() {
+        return dlugosc;
     }
 }

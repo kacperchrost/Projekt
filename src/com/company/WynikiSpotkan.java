@@ -40,9 +40,6 @@ public class WynikiSpotkan extends Zawody {
 
     }
     public void wyslijDoPliku(String napis, String nazwa)  {
-        //wyslij.print(napis+" ");
-        System.out.println(napis+nazwa);
-        //wyslij.println(nazwa);
         wyslij.append(napis+" ");
         wyslij.append(nazwa);
     }

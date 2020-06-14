@@ -8,6 +8,8 @@ import java.util.LinkedList;
 public class Sedzia extends Osoba{
     public static LinkedList<Osoba> sedziowie;
     private int id=0;
+    private int iluWyslanych=-1;
+    private int max=0;
     Scanner podaj=new Scanner(System.in);
     public Sedzia(){
         sedziowie = new LinkedList<>();
@@ -23,6 +25,7 @@ public class Sedzia extends Osoba{
         sedzia.setNazwisko(nazwisko);
         sedzia.setId(++id);
         sedziowie.add(sedzia);
+        max++;
     }
     public void usun(){
         int opcje, n;
@@ -88,6 +91,7 @@ public class Sedzia extends Osoba{
             sedzia.setNazwisko(nazwisko);
             sedzia.setId(++id);
             sedziowie.add(sedzia);
+            max++;
         }
     }
 
@@ -111,5 +115,12 @@ public class Sedzia extends Osoba{
             }
         }
         sedziowie.remove(usun-1);
+        max--;
+    }
+    public int przeslijSedziego(){
+        if (iluWyslanych==max)iluWyslanych=-1;
+        iluWyslanych++;
+        return iluWyslanych;
+
     }
 }
