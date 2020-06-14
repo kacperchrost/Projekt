@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Scanner;
-
 /**
  *
  * @author
@@ -198,7 +197,4 @@ public class Main {
         System.out.println("Szczegoly zostaly zapisane w pliku");
         wyniki.zamknijPlik();
     }
-
-
-
 }

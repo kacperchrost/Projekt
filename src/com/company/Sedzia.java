@@ -94,7 +94,6 @@ public class Sedzia extends Osoba{
             max++;
         }
     }
-
     /**
      * @author KC
      * @return Zwraca id wylosowanego sedziego
@@ -121,6 +120,5 @@ public class Sedzia extends Osoba{
         if (iluWyslanych==max)iluWyslanych=-1;
         iluWyslanych++;
         return iluWyslanych;
-
     }
 }

@@ -26,7 +26,6 @@ public class WynikiSpotkan extends Zawody {
             System.exit(1);
         }
     }
-
     /**
      *
      * @author KC
@@ -46,7 +45,6 @@ public class WynikiSpotkan extends Zawody {
     public void wyslijDoPliku(int n)  {
         wyslij.println();
     }
-
     /**
      * @author KC
      * @throws FileNotFoundException wyrzuca oraz obsługuje wyjątek gdy program nie znajdzie pliku o podanej nazwie

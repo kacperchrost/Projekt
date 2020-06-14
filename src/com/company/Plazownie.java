@@ -20,6 +20,5 @@ public class Plazownie {
             System.out.println(linia);
         }
         in.close();
-
     }
 }
