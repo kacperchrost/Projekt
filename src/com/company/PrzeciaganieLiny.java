@@ -8,10 +8,11 @@ public class PrzeciaganieLiny extends Rozgrywka{
     public PrzeciaganieLiny(){
 
     }
-    public void dlugoscLiny(){
+    public void dlugoscLiny(WynikiSpotkan wynik){
         Scanner podaj=new Scanner(System.in);
         System.out.println("Podaj dlugosc przeciaganej liny: ");
         dlugosc = podaj.nextInt();
+        wynik.wyslijDoPliku("Przeciagana lina miala dlugosc "+getDlugosc()+" m.");
     }
     public int getWielkoscDruzyny(){
         return  wielkoscDruzyny;

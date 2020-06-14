@@ -44,23 +44,21 @@ public class Zawody {
         druzyny.add(druzyna);
     }
 
-    public void dodajTurniej()  {
+    public void dodajTurniej(Zawody turniej)  {
         if (rodzajTurniaju.equals("Siatkowka"))              //metoda w Rozgrywka
         {
             Siatkowka siatkowka = new Siatkowka();
-            siatkowka.dodajRozgrywke();
+            siatkowka.dodajRozgrywke(turniej);
         }
         if (rodzajTurniaju.equals("Dwa ognie"))
         {
             DwaOgnie dwaOgnie = new DwaOgnie();
-            dwaOgnie.dodajRozgrywke();
-            dwaOgnie.iloscPilek();
+            dwaOgnie.dodajRozgrywke(turniej);
         }
         if (rodzajTurniaju.equals("Przeciaganie liny"))
         {
             PrzeciaganieLiny przeciaganieLiny = new PrzeciaganieLiny();
-            przeciaganieLiny. dlugoscLiny();
-            przeciaganieLiny.dodajRozgrywke();
+            przeciaganieLiny.dodajRozgrywke(turniej);
         }
     }
 
@@ -124,11 +122,14 @@ public class Zawody {
         }
         System.out.println("-----------------------------------------");
     }
-    public void przegladDruzyn (){
+    public void przegladDruzyn (WynikiSpotkan wyniki){
 
         for(Object i : druzyny)
         {
-            System.out.println("Druzyna "+((Druzyna)i).getNazwa()+" Wygranych: "+((Druzyna)i).getLiczbaWygranych()+" co daje "+((Druzyna)i).getMiejsceWTabeli()+" miejsce w tabeli.");
+            System.out.println("Druzyna "+((Druzyna)i).getNazwa()+" Wygranych: "+((Druzyna)i).getLiczbaWygranych());
+        }
+        for (int i=0; i<8; i++){
+            wyniki.wyslijDoPliku(druzyny.get(i));
         }
     }
 
@@ -149,6 +150,12 @@ public class Zawody {
         Druzyna druzyna = new Druzyna();
         druzyna.setNazwa(nazwa);
         dodajDoListy(druzyna);
+    }
+    public void topTrzy(WynikiSpotkan wyniki){
+        for(int i=0;i<4;i++)
+        {
+            wyniki.wyslijDoPliku("Miejsce #"+(i+1)+" zajela druzyna "+finaly.get(i).getNazwa(),1);
+        }
     }
 }
 
