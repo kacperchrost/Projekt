@@ -27,7 +27,7 @@ public class Main {
             System.out.println("[1]Plazownie");
             System.out.println("[2]Turniej");
             System.out.println("[3]Wypisz ostatni turniej");
-            System.out.println("[4]Tabela wynikow ostatnich turneji");
+            System.out.println("[4]Tabela wynikow ostatnich turnieji");
             System.out.println("[5]Sedziowie");
             System.out.println("[0]Wyjscie");
             System.out.println("______________________________");
