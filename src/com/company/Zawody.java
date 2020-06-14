@@ -2,9 +2,9 @@ package com.company;
 
 import javax.swing.text.SimpleAttributeSet;
 import java.io.FileNotFoundException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.Comparator;
+import java.util.Collection;
 
 public class Zawody {
     private String data;
@@ -12,6 +12,7 @@ public class Zawody {
     private String nazwaTurnieju;
     private static LinkedList<Druzyna> druzyny;              //list druzyn danego turnieju
     Scanner scan = new Scanner(System.in);
+    private LinkedList<Druzyna> finaly = new LinkedList<Druzyna>();
 
     public Zawody() {
 
@@ -43,33 +44,117 @@ public class Zawody {
         druzyny.add(druzyna);
     }
 
-    public void dodajTurniej()  {
+    public void dodajTurniej(Zawody turniej)  {
         if (rodzajTurniaju.equals("Siatkowka"))              //metoda w Rozgrywka
         {
             Siatkowka siatkowka = new Siatkowka();
-            siatkowka.dodajRozgrywke();
+            siatkowka.dodajRozgrywke(turniej);
         }
         if (rodzajTurniaju.equals("Dwa ognie"))
         {
             DwaOgnie dwaOgnie = new DwaOgnie();
-            dwaOgnie.dodajRozgrywke();
-            dwaOgnie.iloscPilek();
+            dwaOgnie.dodajRozgrywke(turniej);
         }
         if (rodzajTurniaju.equals("Przeciaganie liny"))
         {
             PrzeciaganieLiny przeciaganieLiny = new PrzeciaganieLiny();
-            przeciaganieLiny. dlugoscLiny();
-            przeciaganieLiny.dodajRozgrywke();
+            przeciaganieLiny.dodajRozgrywke(turniej);
         }
     }
-    void rozegrajTurniej(){
 
+    void rozegrajTurniej(){
+        int wynik;
+        Random r = new Random();
+        for(int i=0;i<8;i++)
+        {
+            for(int j=(i+1);j<8;j++)
+            {
+                wynik=r.nextInt(2);
+                if(wynik==1)
+                {
+                    druzyny.get(i).dodajLiczbaWygranych();
+                }
+                else
+                {
+                    druzyny.get(j).dodajLiczbaWygranych();
+                }
+            }
+        }
+        Collections.sort(druzyny, new Comparator<Druzyna>() {
+            @Override
+            public int compare(Druzyna o1, Druzyna o2) {
+                return o2.getLiczbaWygranych() - o1.getLiczbaWygranych();
+            }
+        });
+        wynik=r.nextInt(2);
+        System.out.println("Pierwszy mecz polfinalu wygrala druzyna: "+druzyny.get(wynik).getNazwa());
+        finaly.add(druzyny.get(wynik));
+        wynik=r.nextInt(2)+2;
+        System.out.println("Drugi mecz polfinalu wygrala druzyna: "+druzyny.get(wynik).getNazwa());
+        finaly.add(druzyny.get(wynik));
+
+        for(int i=0;i<4;i++)
+        {
+            if(!finaly.contains(druzyny.get(i)))
+            {
+                finaly.add(druzyny.get(i));
+            }
+        }
+
+        wynik=r.nextInt(2);
+        if( wynik==1)
+        {
+            Collections.swap(finaly, 2, 3);
+        }
+
+        wynik=r.nextInt(2);
+        if(wynik==1)
+        {
+            Collections.swap(finaly, 0, 1);
+        }
+        System.out.println("Finaly wygrala druzyna: "+finaly.get(0).getNazwa());
+
+        System.out.println("-----------------------------------------");
+
+        for(int i=0;i<4;i++)
+        {
+            System.out.println("Miejsce #"+(i+1)+" zajela druzyna "+finaly.get(i).getNazwa());
+        }
+        System.out.println("-----------------------------------------");
     }
-    public void przegladDruzyn (){
+    public void przegladDruzyn (WynikiSpotkan wyniki){
 
         for(Object i : druzyny)
         {
-            System.out.println("Druzyna "+((Druzyna)i).getNazwa()+" Wygranych: "+((Druzyna)i).getLiczbaWygranych()+" co daje "+((Druzyna)i).getMiejsceWTabeli()+" miejsce w tabeli.");
+            System.out.println("Druzyna "+((Druzyna)i).getNazwa()+" Wygranych: "+((Druzyna)i).getLiczbaWygranych());
+        }
+        for (int i=0; i<8; i++){
+            wyniki.wyslijDoPliku(druzyny.get(i));
+        }
+    }
+
+    public void zamienDruzyne(){
+        System.out.println("Podaj nazwe druzyny do zamienienia");
+        String nazwa;
+        nazwa=scan.nextLine();
+        for(Object i : druzyny)
+        {
+            if ((((Druzyna)i).getNazwa()).equals(nazwa))
+            {
+                druzyny.remove(i);
+                break;
+            }
+        }
+        System.out.println("Podaj nazwe nowej druzyny: ");
+        nazwa= scan.nextLine();
+        Druzyna druzyna = new Druzyna();
+        druzyna.setNazwa(nazwa);
+        dodajDoListy(druzyna);
+    }
+    public void topTrzy(WynikiSpotkan wyniki){
+        for(int i=0;i<4;i++)
+        {
+            wyniki.wyslijDoPliku("Miejsce #"+(i+1)+" zajela druzyna "+finaly.get(i).getNazwa(),1);
         }
     }
 }

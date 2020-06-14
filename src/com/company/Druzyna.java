@@ -2,7 +2,7 @@ package com.company;
 
 public class Druzyna {
     private String nazwa;
-    private int liczbaWygranych;
+    protected int liczbaWygranych;
     private int miejsceWTabeli;
 
     public Druzyna(){
@@ -15,6 +15,11 @@ public class Druzyna {
 
     public int getLiczbaWygranych() {
         return liczbaWygranych;
+    }
+
+    public void dodajLiczbaWygranych()
+    {
+        liczbaWygranych++;
     }
 
     public int getMiejsceWTabeli() {

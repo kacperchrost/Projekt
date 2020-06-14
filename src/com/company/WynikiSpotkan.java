@@ -15,10 +15,11 @@ public class WynikiSpotkan extends Zawody {
     private Scanner scan = new Scanner(System.in);
     PrintWriter wyslij = null;
 
-    public WynikiSpotkan(){
+    public WynikiSpotkan(String nazwa){
         listaSpotkan = new LinkedList<Zawody>();
+        nazwa+=".txt";
         try{
-            wyslij = new PrintWriter(new File("wyniki.txt"));
+            wyslij = new PrintWriter(new File(nazwa));
         }
         catch(FileNotFoundException ex){
             System.out.println("Blad pliku: "+ ex.getMessage());
@@ -35,13 +36,16 @@ public class WynikiSpotkan extends Zawody {
      * Wpisuje wyniki do pliku
      */
     public void wyslijDoPliku(Druzyna druzyna) {
-        wyslij.println(druzyna);
-
-
+        wyslij.println(druzyna.getNazwa()+", liczba wygranychw etapie kazdy na kazdego : "+druzyna.getLiczbaWygranych()+" ");
     }
-    public void wyslijDoPliku(String napis, String nazwa)  {
-        wyslij.append(napis+" ");
-        wyslij.append(nazwa);
+    public void wyslijDoPliku(String nazwa)  {
+        wyslij.print(nazwa+" ");
+    }
+    public void wyslijDoPliku(String nazwa, int n)  {
+        wyslij.println(nazwa+" ");
+    }
+    public void wyslijDoPliku(int n)  {
+        wyslij.println();
     }
 
     /**
