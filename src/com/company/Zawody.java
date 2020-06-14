@@ -44,7 +44,7 @@ public class Zawody {
         druzyny.add(druzyna);
     }
 
-    public void dodajTurniej(Zawody turniej)  {
+    public void dodajTurniej(Zawody turniej) throws Exception {
         if (rodzajTurniaju.equals("Siatkowka"))              //metoda w Rozgrywka
         {
             Siatkowka siatkowka = new Siatkowka();

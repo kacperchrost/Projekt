@@ -1,7 +1,7 @@
 package com.company;
 
 public class Rozgrywka extends Zawody {
-    public void dodajRozgrywke(Zawody turniej)  {
+    public void dodajRozgrywke(Zawody turniej){
         System.out.println("Wlasnie jest przygotowywany i za chwile zostanie rozgrywany turniej.");
         System.out.println("Podaj nazwe turnieju");
         String nazwa;
@@ -11,7 +11,17 @@ public class Rozgrywka extends Zawody {
         {
             Druzyna druzyna = new Druzyna();
             System.out.println("Podaj nazwe druzyny nr: "+(i+1));
-            nazwa= scan.nextLine();
+            nazwa = scan.nextLine();
+            try{
+                if(nazwa.isEmpty())
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception ex){
+                System.out.println("Nie podano nazwy druzyny.");
+                i--;
+            }
             druzyna.setNazwa(nazwa);
             dodajDoListy(druzyna);
         }
