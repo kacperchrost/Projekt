@@ -134,19 +134,51 @@ public class Zawody {
     }
 
     public void zamienDruzyne(){
+        int n=0, licz=0, k=0;
         System.out.println("Podaj nazwe druzyny do zamienienia");
         String nazwa;
-        nazwa=scan.nextLine();
-        for(Object i : druzyny)
-        {
-            if ((((Druzyna)i).getNazwa()).equals(nazwa))
-            {
-                druzyny.remove(i);
-                break;
+        do {
+            try {
+                n++;
+                nazwa=scan.nextLine();
+                for (Object i : druzyny) {
+                    if ((((Druzyna) i).getNazwa()).equals(nazwa)) {
+                        druzyny.remove(i);
+                        break;
+                    }
+                    else
+                    {
+                        licz++;
+                    }
+                }
+                if(licz==druzyny.size() || nazwa.isEmpty())
+                {
+                    throw new Exception();
+                }
             }
-        }
+            catch(Exception ex)
+            {
+                System.out.println("Druzyna o podanej nazwie nie bierze udzialu w turnieju. Podaj ponownie: ");
+                n=0;
+                licz=0;
+            }
+        }while(n==0);
         System.out.println("Podaj nazwe nowej druzyny: ");
-        nazwa= scan.nextLine();
+        do{
+            nazwa= scan.nextLine();
+            try{
+                k++;
+                if(nazwa.isEmpty())
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Nie podano nazwy druzyny. Podaj ponownie: ");
+                k=0;
+            }
+        }while(k==0);
         Druzyna druzyna = new Druzyna();
         druzyna.setNazwa(nazwa);
         dodajDoListy(druzyna);

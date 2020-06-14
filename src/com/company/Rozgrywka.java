@@ -2,10 +2,25 @@ package com.company;
 
 public class Rozgrywka extends Zawody {
     public void dodajRozgrywke(Zawody turniej){
+        int k=0;
         System.out.println("Wlasnie jest przygotowywany i za chwile zostanie rozgrywany turniej.");
         System.out.println("Podaj nazwe turnieju");
         String nazwa;
-        nazwa= scan.nextLine();
+        do{
+            nazwa= scan.nextLine();
+            try{
+                k++;
+                if(nazwa.isEmpty())
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Nie podano nazwy turnieju. Podaj ponownie: ");
+                k=0;
+            }
+        }while(k==0);
         turniej.setNazwaTurnieju(nazwa);
         for (int i=0; i<8; i++)
         {
