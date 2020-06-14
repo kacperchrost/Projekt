@@ -3,7 +3,6 @@ package com.company;
 import java.util.Scanner;
 
 public class PrzeciaganieLiny extends Rozgrywka{
-    private int wielkoscDruzyny=4;
     private int dlugosc=8;
     public PrzeciaganieLiny(){
 
@@ -28,9 +27,6 @@ public class PrzeciaganieLiny extends Rozgrywka{
             }
         }while(n==0);
         wynik.wyslijDoPliku("Przeciagana lina miala dlugosc "+getDlugosc()+" m.");
-    }
-    public int getWielkoscDruzyny(){
-        return  wielkoscDruzyny;
     }
 
     public int getDlugosc() {

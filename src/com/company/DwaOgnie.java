@@ -3,7 +3,6 @@ package com.company;
 import java.util.Scanner;
 
 public class DwaOgnie extends Rozgrywka{
-    private int wielkoscDruzyny=10;
     private int ilePilek;
 
     public DwaOgnie(){
@@ -28,9 +27,6 @@ public class DwaOgnie extends Rozgrywka{
             }
         }while(n==0);
         wynik.wyslijDoPliku("Użyto "+getIlePilek()+" pilek.");
-    }
-    public int getWielkoscDruzyny(){
-        return  wielkoscDruzyny;
     }
 
     public int getIlePilek() {

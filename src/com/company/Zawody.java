@@ -1,13 +1,8 @@
 package com.company;
 
-import javax.swing.text.SimpleAttributeSet;
-import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.Comparator;
-import java.util.Collection;
 
 public class Zawody {
-    private String data;
     private String rodzajTurniaju;
     private String nazwaTurnieju;
     private static LinkedList<Druzyna> druzyny;              //list druzyn danego turnieju
@@ -20,9 +15,6 @@ public class Zawody {
     public Zawody(String nazwa) {
         setRodzajTurnieju(nazwa);
         druzyny = new LinkedList<>();
-    }
-    public String getData(){
-        return data;
     }
     public String getRodzajTurnieju(){
         return rodzajTurniaju;

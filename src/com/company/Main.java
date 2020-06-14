@@ -1,12 +1,6 @@
 package com.company;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.IOException;
 
 /**
  *
@@ -189,7 +183,7 @@ public class Main {
         wyniki.wyslijDoPliku(turniej.getNazwaTurnieju(),1);
         wyniki.wyslijDoPliku("Druzyny biorace udzial: ", 1);
         turniej.rozegrajTurniej();
-        System.out.println("Turnirj zakonczyl sie z nastepujacymi wynikami:");
+        System.out.println("Turniej zakonczyl sie z nastepujacymi wynikami:");
         turniej.przegladDruzyn(wyniki);
         wyniki.wyslijDoPliku("*",1);
         turniej.topTrzy(wyniki);

@@ -32,13 +32,13 @@ public class Rozgrywka extends Zawody {
                 {
                     throw new Exception();
                 }
+                druzyna.setNazwa(nazwa);
+                dodajDoListy(druzyna);
             }
             catch(Exception ex){
                 System.out.println("Nie podano nazwy druzyny.");
                 i--;
             }
-            druzyna.setNazwa(nazwa);
-            dodajDoListy(druzyna);
         }
     }
 }

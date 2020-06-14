@@ -7,18 +7,15 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class WynikiSpotkan extends Zawody {
-    private int idSpotkania;
-    private LinkedList<Zawody> listaSpotkan; //nie wiem co tu wpisać narazie
-    private String wynik;
-    private String nazwapliku;
-    private Scanner scan = new Scanner(System.in);
+
+    private LinkedList<Zawody> listaSpotkan;
     PrintWriter wyslij = null;
 
     public WynikiSpotkan(){
 
     }
     public WynikiSpotkan(String nazwa){
-        listaSpotkan = new LinkedList<Zawody>();
+        listaSpotkan = new LinkedList<>();
         nazwa+=".txt";
         try{
             wyslij = new PrintWriter(new File(nazwa));
@@ -38,7 +35,7 @@ public class WynikiSpotkan extends Zawody {
      * Wpisuje wyniki do pliku
      */
     public void wyslijDoPliku(Druzyna druzyna) {
-        wyslij.println(druzyna.getNazwa()+", liczba wygranychw etapie kazdy na kazdego : "+druzyna.getLiczbaWygranych()+" ");
+        wyslij.println(druzyna.getNazwa()+", liczba wygranych w etapie kazdy na kazdego : "+druzyna.getLiczbaWygranych()+" ");
     }
     public void wyslijDoPliku(String nazwa)  {
         wyslij.print(nazwa+" ");
@@ -65,7 +62,7 @@ public class WynikiSpotkan extends Zawody {
             wyniki = new Scanner(new File(nazwaPliku));
         }
         catch(FileNotFoundException ex){
-            System.out.println("Blad pliku: "+ ex.getMessage()+" lub nie bytlo jeszcze rozgrywek z dysacypliny "+nazwa);
+            System.out.println("Blad pliku: "+ ex.getMessage()+" lub nie bylo jeszcze rozgrywek z dysacypliny "+nazwa);
             System.exit(1);
         }
 
@@ -80,7 +77,7 @@ public class WynikiSpotkan extends Zawody {
         }
         if(i<=1)
         {
-            System.out.println("Nie bytlo jeszcze rozgrywek z dysacypliny "+nazwa);
+            System.out.println("Nie bylo jeszcze rozgrywek z dyscypliny "+nazwa);
         }
         wyniki.close();
     }

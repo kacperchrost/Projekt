@@ -1,9 +1,9 @@
 package com.company;
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Sedzia extends Osoba{
     public static LinkedList<Osoba> sedziowie;
