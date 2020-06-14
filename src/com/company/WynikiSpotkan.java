@@ -6,14 +6,30 @@ import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+/**
+ * @author Dawid Pieciul, Kacper Chrost; implementacja wyjątków Kacper Chrost
+ * Klasa WynikiSpotkan przesyła wyniki zawodów do pliku oraz odczytuje je z niego na ekran
+ */
+
 public class WynikiSpotkan extends Zawody {
 
     private LinkedList<Zawody> listaSpotkan;
     PrintWriter wyslij = null;
 
+    /**
+     *Konstruktor bezparametrowy
+     */
+
     public WynikiSpotkan(){
 
     }
+
+    /**
+     *
+     * @param nazwa przekazywanie nazwy pliku, który ma zostać otwarty
+     * @throws FileNotFoundException wyrzuca oraz obsługuje wujątek gdy oprogram ma problem z plikiem
+     * Konstruktor jednoparametrowy tworzący plik o nazwie odpowiadającej dyscyplinie
+     */
     public WynikiSpotkan(String nazwa){
         listaSpotkan = new LinkedList<>();
         nazwa+=".txt";
@@ -28,27 +44,44 @@ public class WynikiSpotkan extends Zawody {
     }
     /**
      *
-     * @author KC
-     * @param druzyna przekazywana druzyna, która ma zostać wpisana do pliku
-     * @throws FileNotFoundException wyrzuca oraz obsługuje wyjątek gdy program ma problem z plikiem
-     * Wpisuje wyniki do pliku
+     * @param druzyna przekazywany obiekt druzyny, który ma zostać wpisany do pliku
+     * Metoda wpisuje wyniki do pliku
      */
     public void wyslijDoPliku(Druzyna druzyna) {
         wyslij.println(druzyna.getNazwa()+", liczba wygranych w etapie kazdy na kazdego : "+druzyna.getLiczbaWygranych()+" ");
     }
+
+    /**
+     *
+     * @param nazwa przekazywany tekst
+     * Metoda wypisuje do pliku przekazany tekst
+     */
     public void wyslijDoPliku(String nazwa)  {
         wyslij.print(nazwa+" ");
     }
+
+    /**
+     *
+     * @param nazwa przekazywany tekst
+     * @param n przekazywana liczba
+     * Metoda wypisuje do pliku przekazany tekst oraz przechodzi do nowej linii
+     */
     public void wyslijDoPliku(String nazwa, int n)  {
         wyslij.println(nazwa+" ");
     }
+
+    /**
+     *
+     * @param n przekazywana liczba
+     * Metoda sprawiające przejście do następnej linii w pliku
+     */
     public void wyslijDoPliku(int n)  {
         wyslij.println();
     }
     /**
-     * @author KC
+     *
      * @throws FileNotFoundException wyrzuca oraz obsługuje wyjątek gdy program nie znajdzie pliku o podanej nazwie
-     * Wypisuje na ekran wyniki
+     * Metoda wypisuje na ekran wyniki
      */
     public void odczytWyników(String nazwaPliku, String n) throws FileNotFoundException {
         String wynik;
@@ -79,6 +112,10 @@ public class WynikiSpotkan extends Zawody {
         }
         wyniki.close();
     }
+
+    /**
+     * Metoda zamykająca plik
+     */
     public void zamknijPlik(){
         wyslij.close();
     }
