@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
+import com.company.Plazownie;
 
 /**
  *
@@ -30,6 +31,8 @@ public class Main {
             {
                 case "1":
                     System.out.println("Milego dnia.");
+                    Plazownie czill = new Plazownie();
+                    czill.plazuj();
                     break;
                 case "2":
                     int n;
