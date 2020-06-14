@@ -28,7 +28,6 @@ public class DwaOgnie extends Rozgrywka{
         }while(n==0);
         wynik.wyslijDoPliku("Użyto "+getIlePilek()+" pilek.");
     }
-
     public int getIlePilek() {
         return ilePilek;
     }

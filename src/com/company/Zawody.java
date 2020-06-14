@@ -31,11 +31,9 @@ public class Zawody {
     public void setNazwaTurnieju(String nazwaTurnieju){
         this.nazwaTurnieju=nazwaTurnieju;
     }
-
     public void dodajDoListy(Druzyna druzyna){
         druzyny.add(druzyna);
     }
-
     public void dodajTurniej(Zawody turniej) throws Exception {
         if (rodzajTurniaju.equals("Siatkowka"))              //metoda w Rozgrywka
         {
@@ -92,7 +90,6 @@ public class Zawody {
                 finaly.add(druzyny.get(i));
             }
         }
-
         wynik=r.nextInt(2);
         if( wynik==1)
         {
@@ -124,7 +121,6 @@ public class Zawody {
             wyniki.wyslijDoPliku(druzyny.get(i));
         }
     }
-
     public void zamienDruzyne(){
         int n=0, licz=0, k=0;
         System.out.println("Podaj nazwe druzyny do zamienienia");
@@ -182,18 +178,3 @@ public class Zawody {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

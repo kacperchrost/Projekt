@@ -19,11 +19,4 @@ public class Siatkowka extends Rozgrywka {
             System.out.println(sedzia.sedziowie.get(id).imie+" "+sedzia.sedziowie.get(id).nazwisko+" ");
         }
     }
-
 }
-
-
-
-
-
-

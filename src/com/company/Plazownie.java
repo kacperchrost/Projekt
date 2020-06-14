@@ -4,8 +4,15 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class Plazownie {
     public void plazuj() throws FileNotFoundException {
-        File plik = new File("plaza.txt");
-        Scanner in = new Scanner(plik);
+       Scanner in = null;
+       try{
+           in = new Scanner(new File("plaza.txt"));
+       }
+       catch(FileNotFoundException ex)
+       {
+           System.out.println("Blad pliku: "+ex.getMessage());
+           System.exit(1);
+       }
 
         while (in.hasNext())
         {
