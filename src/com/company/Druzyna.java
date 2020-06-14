@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- * @author Dawid Pieciul
+ * @author Dawid Pieciul, Kacper Chrost, Bartłomiej Busłowski
  * Klasa obsługująca drużyny - klasa matka
  */
 
