@@ -36,7 +36,6 @@ public class Main {
             {
                 case "1":
                     System.out.println("Milego dnia.");
-
                     break;
                 case "2":
                     int n;
@@ -49,7 +48,6 @@ public class Main {
                     System.out.println("[3]Dwa ognie.");
                     System.out.println("______________________________");
                     opcje = scan.nextLine();
-
                         n=1;
                         switch(opcje)
                         {
@@ -84,9 +82,46 @@ public class Main {
                     }while(n==0);
                     break;
                 case "3":
+                    do
+                    {
+                        System.out.println("______________________________");
+                        System.out.println("Z jakiej dyscypliny chcesz zobaczyc ostatni turniej?");
+                        System.out.println("[1]Siatkowka.");
+                        System.out.println("[2]Przeciąganie liny.");
+                        System.out.println("[3]Dwa ognie.");
+                        System.out.println("______________________________");
+                        opcje = scan.nextLine();
+                        n=1;
+                        switch(opcje)
+                        {
+                            case "1":
+                                WynikiSpotkan wyniki1 = new WynikiSpotkan();
+                                wyniki1.odczytWyników("Siatkowka","-");
+                                break;
+                            case "2":
+                                WynikiSpotkan wyniki2 = new WynikiSpotkan();
+                                wyniki2.odczytWyników("Przeciaganie liny","-");
+                                break;
+                            case "3":
+                                WynikiSpotkan wyniki3 = new WynikiSpotkan();
+                                wyniki3.odczytWyników("Dwa ognie","-");
+                                break;
+                            default:
+                                System.out.println("Zla opcja");
+                                n=0;
+                        }
+                    }while(n==0);
                     break;
                 case "4":
-
+                    WynikiSpotkan wyniki1 = new WynikiSpotkan();
+                    System.out.println("Siatkowka:");
+                    wyniki1.odczytWyników("Siatkowka","*");
+                    WynikiSpotkan wyniki2 = new WynikiSpotkan();
+                    System.out.println("Przeciaganie liny:");
+                    wyniki2.odczytWyników("Przeciaganie liny","*");
+                    WynikiSpotkan wyniki3 = new WynikiSpotkan();
+                    System.out.println("Dwa ognie:");
+                    wyniki3.odczytWyników("Dwa ognie","*");
                     break;
                 case "5":
                     do {
@@ -115,7 +150,6 @@ public class Main {
                     }while(n==0);
                     break;
                 case "0":
-                    //wyniki.zamknijPlik();
                     return;
                 default:
                     System.out.println("Zla opcja");
@@ -157,8 +191,9 @@ public class Main {
         turniej.rozegrajTurniej();
         System.out.println("Turnirj zakonczyl sie z nastepujacymi wynikami:");
         turniej.przegladDruzyn(wyniki);
-        wyniki.wyslijDoPliku(1);
+        wyniki.wyslijDoPliku("*",1);
         turniej.topTrzy(wyniki);
+        System.out.println("Szczegoly zostaly zapisane w pliku");
         wyniki.zamknijPlik();
     }
 

@@ -3,7 +3,6 @@ package com.company;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.sql.SQLOutput;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -15,6 +14,9 @@ public class WynikiSpotkan extends Zawody {
     private Scanner scan = new Scanner(System.in);
     PrintWriter wyslij = null;
 
+    public WynikiSpotkan(){
+
+    }
     public WynikiSpotkan(String nazwa){
         listaSpotkan = new LinkedList<Zawody>();
         nazwa+=".txt";
@@ -53,23 +55,32 @@ public class WynikiSpotkan extends Zawody {
      * @throws FileNotFoundException wyrzuca oraz obsługuje wyjątek gdy program nie znajdzie pliku o podanej nazwie
      * Wypisuje na ekran wyniki
      */
-    public void odczytWyników() throws FileNotFoundException {
+    public void odczytWyników(String nazwaPliku, String n) throws FileNotFoundException {
         String wynik;
+        String nazwa = nazwaPliku;
         Scanner wyniki = null;
-        System.out.println("Podaj nazwe pliku ktory chcesz odczytać: ");
-        nazwapliku=scan.next();
-        nazwapliku+=".txt";
+        nazwaPliku+=".txt";
+        int i=0;
         try{
-            wyniki = new Scanner(new File(nazwapliku));
+            wyniki = new Scanner(new File(nazwaPliku));
         }
         catch(FileNotFoundException ex){
-            System.out.println("Blad pliku: "+ ex.getMessage());
+            System.out.println("Blad pliku: "+ ex.getMessage()+" lub nie bytlo jeszcze rozgrywek z dysacypliny "+nazwa);
             System.exit(1);
         }
+
         while(wyniki.hasNext())
         {
             wynik=wyniki.nextLine();
-            System.out.println(wynik);
+            if (n.equals("-")){
+                System.out.println(wynik);
+                i++;
+            }
+            if (wynik.equals("* "))n="-";
+        }
+        if(i<=1)
+        {
+            System.out.println("Nie bytlo jeszcze rozgrywek z dysacypliny "+nazwa);
         }
         wyniki.close();
     }
