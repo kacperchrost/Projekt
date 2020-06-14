@@ -1,12 +1,22 @@
 package com.company;
 
 import java.util.Scanner;
-
+/**
+ * @author klasy Dawid Pieciul, implementacja wyjątku Kacper Chrost
+ * Klasa odpowiedzialna za tworzenie rozgrywek z przeciągania liny
+ */
 public class PrzeciaganieLiny extends Rozgrywka{
-    private int dlugosc=8;
+    private int dlugosc;
     public PrzeciaganieLiny(){
 
     }
+    /**
+     *
+     * @param wynik Obiekt Wynik przekazywany do metody jest po to aby móc wpisać dlugość liny do pliku.
+     * Metoda długoscliny() odpowiada za dodanie do turnieju długości przeciąganej liny
+     * Ta metoda uruchamiana jest tylko dla rozgrywek przeciągania liny.
+     * Wyjątek odpowada za sprawdenie czy użytkownik podaje dodatnią wartość długosci liny
+     */
     public void dlugoscLiny(WynikiSpotkan wynik){
         int n=0;
         Scanner podaj=new Scanner(System.in);
@@ -28,6 +38,10 @@ public class PrzeciaganieLiny extends Rozgrywka{
         wynik.wyslijDoPliku("Przeciagana lina miala dlugosc "+getDlugosc()+" m.");
     }
 
+    /**
+     * metoda getDlugosc() (getter)
+     * @return zwraca dlugość liny
+     */
     public int getDlugosc() {
         return dlugosc;
     }
