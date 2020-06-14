@@ -1,13 +1,8 @@
 package com.company;
 
-
 import java.io.FileNotFoundException;
-import java.util.LinkedList;
-import java.util.Random;
 
 public class Siatkowka extends Rozgrywka {
-    private int wielkoscDruzyny=6;
-    private int idsedziapom;
 
     public Siatkowka(){
 
@@ -23,9 +18,6 @@ public class Siatkowka extends Rozgrywka {
             wynik.wyslijDoPliku(sedzia.sedziowie.get(id).nazwisko);
             System.out.println(sedzia.sedziowie.get(id).imie+" "+sedzia.sedziowie.get(id).nazwisko+" ");
         }
-    }
-    public int getWielkoscDruzyny(){
-        return  wielkoscDruzyny;
     }
 
 }

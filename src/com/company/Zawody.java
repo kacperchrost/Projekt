@@ -1,13 +1,8 @@
 package com.company;
 
-import javax.swing.text.SimpleAttributeSet;
-import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.Comparator;
-import java.util.Collection;
 
 public class Zawody {
-    private String data;
     private String rodzajTurniaju;
     private String nazwaTurnieju;
     private static LinkedList<Druzyna> druzyny;              //list druzyn danego turnieju
@@ -20,9 +15,6 @@ public class Zawody {
     public Zawody(String nazwa) {
         setRodzajTurnieju(nazwa);
         druzyny = new LinkedList<>();
-    }
-    public String getData(){
-        return data;
     }
     public String getRodzajTurnieju(){
         return rodzajTurniaju;
@@ -44,7 +36,7 @@ public class Zawody {
         druzyny.add(druzyna);
     }
 
-    public void dodajTurniej(Zawody turniej)  {
+    public void dodajTurniej(Zawody turniej) throws Exception {
         if (rodzajTurniaju.equals("Siatkowka"))              //metoda w Rozgrywka
         {
             Siatkowka siatkowka = new Siatkowka();
@@ -134,19 +126,51 @@ public class Zawody {
     }
 
     public void zamienDruzyne(){
+        int n=0, licz=0, k=0;
         System.out.println("Podaj nazwe druzyny do zamienienia");
         String nazwa;
-        nazwa=scan.nextLine();
-        for(Object i : druzyny)
-        {
-            if ((((Druzyna)i).getNazwa()).equals(nazwa))
-            {
-                druzyny.remove(i);
-                break;
+        do {
+            try {
+                n++;
+                nazwa=scan.nextLine();
+                for (Object i : druzyny) {
+                    if ((((Druzyna) i).getNazwa()).equals(nazwa)) {
+                        druzyny.remove(i);
+                        break;
+                    }
+                    else
+                    {
+                        licz++;
+                    }
+                }
+                if(licz==druzyny.size() || nazwa.isEmpty())
+                {
+                    throw new Exception();
+                }
             }
-        }
+            catch(Exception ex)
+            {
+                System.out.println("Druzyna o podanej nazwie nie bierze udzialu w turnieju. Podaj ponownie: ");
+                n=0;
+                licz=0;
+            }
+        }while(n==0);
         System.out.println("Podaj nazwe nowej druzyny: ");
-        nazwa= scan.nextLine();
+        do{
+            nazwa= scan.nextLine();
+            try{
+                k++;
+                if(nazwa.isEmpty())
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Nie podano nazwy druzyny. Podaj ponownie: ");
+                k=0;
+            }
+        }while(k==0);
         Druzyna druzyna = new Druzyna();
         druzyna.setNazwa(nazwa);
         dodajDoListy(druzyna);
