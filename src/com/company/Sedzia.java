@@ -23,7 +23,7 @@ public class Sedzia extends Osoba{
         sedziowie = new LinkedList<>();
     }
     /**
-     * @author Dawid Pieciul
+     *
      * Metoda dodaj() dodaje sędziego do listy obiektów klasy Sedzia,
      * prosząc o wpisanie imienia i nazwiska z klawiatury.
      * Zwieksza limit sedziów możliwych do wylosowanie o 1.
@@ -42,7 +42,7 @@ public class Sedzia extends Osoba{
         max++;
     }
     /**
-     * @author Dawid Pieciul, implementacja Kacper Chrost
+     *
      * Metoda usun() usuwa obiekt Sedziego z listy obiektów klasy Sedzia,
      * pozwalając na wypisanie listy sedziów w razie nie znania id sedziego do usunięcia.
      * Zmniejsz limit sedziów możliwych do wylosowanie o 1.
@@ -84,7 +84,7 @@ public class Sedzia extends Osoba{
         }while(n==1);
     }
     /**
-     * @author Dawid Pieciul
+     *
      * Metoda przeglad() wypisuje id, imie,
      * nazwisko każdego sedziego z listy obiektów klasy Sedzia.
      */
@@ -95,7 +95,7 @@ public class Sedzia extends Osoba{
         }
     }
     /**
-     * @author Dawid Pieciul, implementacja wyjątku Kacper Chrost
+     *
      * Metoda wczytajZPliku() wczytuje sedziów do listy obiektów klasy Sedzia
      * oraz ustawia limit sedziów.
      * @throws FileNotFoundException Obsługa braku pliku.
@@ -126,8 +126,8 @@ public class Sedzia extends Osoba{
         }
     }
     /**
-     * @author Dawid Pieciul
-     *  Metoda getSedzia (getter)
+     *
+     * Metoda getSedzia (getter)
      * @return Zwraca id wylosowanego sedziego
      */
     public static Sedzia getSedzia(int id)
@@ -135,7 +135,7 @@ public class Sedzia extends Osoba{
         return (Sedzia) sedziowie.get(id);
     }
     /**
-     * @author Dawid Pieciul
+     *
      * Metoda usunPom() zapobiega powtarzania kodu.
      * Usuwa obiekty z listy sedziów zwskazany przez
      * niepowtarzalny numer (id)
@@ -155,7 +155,7 @@ public class Sedzia extends Osoba{
         max--;
     }
     /**
-     * @author Dawid Pieciul
+     *
      * Metoda przeslijSedziego() ma na celu zapobiegać wybierania
      * tych samych sędziów do różnch turnieji.
      * @return id aktualnie wysłanego sędziego do turnieju
