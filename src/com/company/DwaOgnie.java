@@ -12,7 +12,6 @@ public class DwaOgnie extends Rozgrywka{
     public DwaOgnie(){
 
     }
-
     /**
      *
      * @param wynik Obiekt Wynik przekazywany do metody jest po to aby móc wpisać ilość piłek do pliku.
@@ -22,11 +21,11 @@ public class DwaOgnie extends Rozgrywka{
      */
     public void iloscPilek(WynikiSpotkan wynik){
         int n=0;
-        Scanner podaj=new Scanner(System.in);
         System.out.println("Podaj ile pilek zostanie uzytych w rozgrywkach: ");
         do {
             try {
                 n++;
+                Scanner podaj=new Scanner(System.in);
                 ilePilek = podaj.nextInt();
                 if (ilePilek <= 0)
                 {

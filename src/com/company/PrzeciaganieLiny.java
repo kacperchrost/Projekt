@@ -19,11 +19,11 @@ public class PrzeciaganieLiny extends Rozgrywka{
      */
     public void dlugoscLiny(WynikiSpotkan wynik){
         int n=0;
-        Scanner podaj=new Scanner(System.in);
         System.out.println("Podaj dlugosc przeciaganej liny: ");
         do {
             try {
                 n++;
+                Scanner podaj=new Scanner(System.in);
                 dlugosc = podaj.nextInt();
                 if (dlugosc <= 0)
                 {
