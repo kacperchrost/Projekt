@@ -5,11 +5,12 @@ package com.company;
  * Klasa odpowiedzialna za tworzenie rozgrywek z siatkówki
  */
 public class Siatkowka extends Rozgrywka {
-
+    /**
+     *Konstruktor bezparametrowy
+     */
     public Siatkowka(){
 
     }
-
     /**
      *
      * @param sedzia Obiekt sedziego przekazywany do metody aby móc odczytywac sędziów z listy sędziów.
@@ -17,7 +18,6 @@ public class Siatkowka extends Rozgrywka {
      * Metoda dodajSedziegoPomocniczego() odpowiada za dodanie do turnieju dwóch sędziów pomocniczych z puli sędziów wczytanych z pliku.
      * Ta metoda uruchamiana jest tylko dla rozgrywek siatkówki.
      */
-
     public void dodajSedziegoPomocniczego(Sedzia sedzia, WynikiSpotkan wynik)  {
         int id = 0;
         wynik.wyslijDoPliku("Przydzielono 2 sedzsiow pomocniczych: ");

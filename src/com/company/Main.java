@@ -3,12 +3,17 @@ package com.company;
 import java.util.Scanner;
 /**
  *
- * @author
+ * @author Dawid Pieciul, Kacper Chrost, Bartłomiej Busłowki
  * @throws Exception jezeli nie zostanie odnaleziony szukany plik lub index
- *
+ * Klasa Main programu. Pozwala na obsługę programu przez użytkownika.
  */
 
 public class Main {
+    /**
+     *
+     * @param args pobiera argumenty z wiersza poleceń
+     * @throws Exception wyrzuca oraz obsługuje wyjątki związane z błędami plików oraz spowodowane przez użytkownika
+     */
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         Sedzia sedzia = new Sedzia();
@@ -152,6 +157,12 @@ public class Main {
 
         }
     }
+
+    /**
+     *
+     * @param turniej1 pobiera obiekt zawodów
+     * Metoda pozwala użytkownikowi na zamianę drużyn biorących udział w zawodach
+     */
     public static void zamianaDruzyny(Zawody turniej1){
         int n;
         do {
@@ -177,6 +188,14 @@ public class Main {
             }
         }while(n==0);
     }
+
+    /**
+     *
+     * @param turniej pobiera obiekt zawodów
+     * @param wyniki pobiera wyniki zawodów
+     * @param sedzia pobiera sędziów biorących udział w zawodach
+     * Metoda obsługująca turniej. Przesyła dane o turnieju do pliku oraz je zapisuje.
+     */
     public static void rozgrywka(Zawody turniej, WynikiSpotkan wyniki, Sedzia sedzia) {
         int id;
         wyniki.wyslijDoPliku(1);

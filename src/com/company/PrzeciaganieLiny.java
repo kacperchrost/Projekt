@@ -7,6 +7,9 @@ import java.util.Scanner;
  */
 public class PrzeciaganieLiny extends Rozgrywka{
     private int dlugosc;
+    /**
+     *Konstruktor bezparametrowy
+     */
     public PrzeciaganieLiny(){
 
     }

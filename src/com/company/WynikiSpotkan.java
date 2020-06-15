@@ -10,20 +10,16 @@ import java.util.Scanner;
  * @author Dawid Pieciul, Kacper Chrost; implementacja wyjątków Kacper Chrost
  * Klasa WynikiSpotkan przesyła wyniki zawodów do pliku oraz odczytuje je z niego na ekran
  */
-
 public class WynikiSpotkan extends Zawody {
 
     private LinkedList<Zawody> listaSpotkan;
     PrintWriter wyslij = null;
-
     /**
      *Konstruktor bezparametrowy
      */
-
     public WynikiSpotkan(){
 
     }
-
     /**
      *
      * @param nazwa przekazywanie nazwy pliku, który ma zostać otwarty
@@ -50,7 +46,6 @@ public class WynikiSpotkan extends Zawody {
     public void wyslijDoPliku(Druzyna druzyna) {
         wyslij.println(druzyna.getNazwa()+", liczba wygranych w etapie kazdy na kazdego : "+druzyna.getLiczbaWygranych()+" ");
     }
-
     /**
      *
      * @param nazwa przekazywany tekst
@@ -59,7 +54,6 @@ public class WynikiSpotkan extends Zawody {
     public void wyslijDoPliku(String nazwa)  {
         wyslij.print(nazwa+" ");
     }
-
     /**
      *
      * @param nazwa przekazywany tekst
@@ -69,7 +63,6 @@ public class WynikiSpotkan extends Zawody {
     public void wyslijDoPliku(String nazwa, int n)  {
         wyslij.println(nazwa+" ");
     }
-
     /**
      *
      * @param n przekazywana liczba
@@ -83,7 +76,7 @@ public class WynikiSpotkan extends Zawody {
      * @throws FileNotFoundException wyrzuca oraz obsługuje wyjątek gdy program nie znajdzie pliku o podanej nazwie
      * Metoda wypisuje na ekran wyniki
      */
-    public void odczytWyników(String nazwaPliku, String n) throws FileNotFoundException {
+    public void odczytWyników(String nazwaPliku, String n){
         String wynik;
         String nazwa = nazwaPliku;
         Scanner wyniki = null;
@@ -112,7 +105,6 @@ public class WynikiSpotkan extends Zawody {
         }
         wyniki.close();
     }
-
     /**
      * Metoda zamykająca plik
      */

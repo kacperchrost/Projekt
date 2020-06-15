@@ -8,7 +8,9 @@ import java.util.Scanner;
  */
 public class DwaOgnie extends Rozgrywka{
     private int ilePilek;
-
+    /**
+     *Konstruktor bezparametrowy
+     */
     public DwaOgnie(){
 
     }
@@ -39,7 +41,6 @@ public class DwaOgnie extends Rozgrywka{
         }while(n==0);
         wynik.wyslijDoPliku("Użyto "+getIlePilek()+" pilek.");
     }
-
     /**
      * metoda getIlePlek() (getter)
      * @return zwraca ilość piłek
