@@ -14,6 +14,7 @@ public class Sedzia extends Osoba{
     private int id=0;
     private int iluWyslanych=-1;
     private int max=0;
+    private int a=0;
     Scanner podaj=new Scanner(System.in);
     /**
      *
@@ -48,16 +49,17 @@ public class Sedzia extends Osoba{
      * Zmniejsz limit sedziów możliwych do wylosowanie o 1.
      */
     public void usun(){
-        int opcje, n;
+        int n;
+        String opcje;
         do{
             System.out.println("Znasz Id sędziego którego chesz usunać? ");
             System.out.println("[1] Tak ");
             System.out.println("[2] Nie ");
-            opcje = podaj.nextInt();
+            opcje = podaj.nextLine();
             n=0;
             switch(opcje)
             {
-                case 1:
+                case "1":
                     System.out.println("Podaj Id sedziego do usuniecia:  ");
                     try{
                         usunPom();
@@ -66,7 +68,7 @@ public class Sedzia extends Osoba{
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 2:
+                case "2":
                     System.out.println("Oto lista sedziow:   ");
                     przeglad();
                     System.out.println("Podaj Id sedziego do usuniecia:  ");
@@ -141,6 +143,7 @@ public class Sedzia extends Osoba{
      * niepowtarzalny numer (id)
      */
     public void usunPom(){
+        a++;
         int idx;
         idx = podaj.nextInt();
         int usun = 0;
@@ -151,7 +154,7 @@ public class Sedzia extends Osoba{
                 usun=idx;
             }
         }
-        sedziowie.remove(usun-1);
+        sedziowie.remove(usun-a);
         max--;
     }
     /**

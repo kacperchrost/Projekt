@@ -124,7 +124,6 @@ public class Zawody {
         wynik=r.nextInt(2)+2;
         System.out.println("Drugi mecz polfinalu wygrala druzyna: "+druzyny.get(wynik).getNazwa());
         finaly.add(druzyny.get(wynik));
-
         for(int i=0;i<4;i++)
         {
             if(!finaly.contains(druzyny.get(i)))
@@ -137,16 +136,13 @@ public class Zawody {
         {
             Collections.swap(finaly, 2, 3);
         }
-
         wynik=r.nextInt(2);
         if(wynik==1)
         {
             Collections.swap(finaly, 0, 1);
         }
         System.out.println("Finaly wygrala druzyna: "+finaly.get(0).getNazwa());
-
         System.out.println("-----------------------------------------");
-
         for(int i=0;i<4;i++)
         {
             System.out.println("Miejsce #"+(i+1)+" zajela druzyna "+finaly.get(i).getNazwa());

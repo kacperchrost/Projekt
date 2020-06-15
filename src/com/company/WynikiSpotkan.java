@@ -23,7 +23,7 @@ public class WynikiSpotkan extends Zawody {
     /**
      *
      * @param nazwa przekazywanie nazwy pliku, który ma zostać otwarty
-     * @throws FileNotFoundException wyrzuca oraz obsługuje wujątek gdy program ma problem z plikiem
+     * Wyjątek wyrzuca oraz jest obsługiwany gdy program ma problem z plikiem
      * Konstruktor jednoparametrowy tworzący plik o nazwie odpowiadającej dyscyplinie
      */
     public WynikiSpotkan(String nazwa){
@@ -87,9 +87,8 @@ public class WynikiSpotkan extends Zawody {
         }
         catch(FileNotFoundException ex){
             System.out.println("Blad pliku: "+ ex.getMessage()+" lub nie bylo jeszcze rozgrywek z dysacypliny "+nazwa);
-            System.exit(1);
+            return;
         }
-
         while(wyniki.hasNext())
         {
             wynik=wyniki.nextLine();
