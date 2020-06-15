@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 /**
- * @author Bartłomiej Busłowski
+ * @author Bartłomiej Busłowski, implementacja wyjątku Kacper Chrost
  * Klasa obsługująca plażowanie
  */
 public class Plazownie {
