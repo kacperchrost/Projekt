@@ -1,41 +1,78 @@
 package com.company;
 
 import java.util.*;
-
+/**
+ * @author klasy Dawid Pieciul, Kacper Chrost, Bartłomiej Busłowski, implementacja wyjątku Kacper Chrost
+ * Klasa odpowiedzialna za tworzenie obiektów zawody w której są listy drużyn
+ */
 public class Zawody {
     private String rodzajTurniaju;
     private String nazwaTurnieju;
     private static LinkedList<Druzyna> druzyny;              //list druzyn danego turnieju
     Scanner scan = new Scanner(System.in);
     private LinkedList<Druzyna> finaly = new LinkedList<Druzyna>();
-
+    /**
+     *Konstruktor bezparametrowy
+     */
     public Zawody() {
 
     }
+    /**
+     * Konstruktor jednoparametrowy tworzący listę obiektów klasy druzyna oraz nadaje nazwę turniju przekazaną do konstruktora
+     */
     public Zawody(String nazwa) {
         setRodzajTurnieju(nazwa);
         druzyny = new LinkedList<>();
     }
+    /**
+     * metoda getRodzajTurnieju (getter)
+     * @return zwraca rodzaj turnieju
+     */
     public String getRodzajTurnieju(){
         return rodzajTurniaju;
     }
+    /**
+     * metoda getDrużyny (getter)
+     * @return zwraca listę drużyn
+     */
     public LinkedList<Druzyna> getDruzyny(){
         return druzyny;
     }
+    /**
+     * metoda getNazwaTurnieju (getter)
+     * @return zwraca nazwe turnieju
+     */
     public String getNazwaTurnieju(){
         return nazwaTurnieju;
     }
+    /**
+     * metoda setRodzajTurnieju (setter)
+     * @param rodzajTurniaju przekazanie rodzaju turnirju
+     */
     public void setRodzajTurnieju(String rodzajTurniaju){
         this.rodzajTurniaju=rodzajTurniaju;
     }
+    /**
+     * metoda setNazwaTurnieju (setter)
+     * @param nazwaTurnieju przekazanie nazwy turniju
+     */
     public void setNazwaTurnieju(String nazwaTurnieju){
         this.nazwaTurnieju=nazwaTurnieju;
     }
+    /**
+     * Metoda dodaje drużyne do listy drużyn
+     * @param druzyna przekazuje drużyne aby dodać ją do listy drużyn
+     */
     public void dodajDoListy(Druzyna druzyna){
         druzyny.add(druzyna);
     }
-    public void dodajTurniej(Zawody turniej) throws Exception {
-        if (rodzajTurniaju.equals("Siatkowka"))              //metoda w Rozgrywka
+    /**
+     * @author Dawid Pieciul
+     * Metoda sprawdza jakiego rodzaju turniej chcemy stworzyć i dodaje rozgrywkę tego rodzaju
+     * @param turniej przekazuje Obiekt klasy zawody
+     */
+    public void dodajTurniej(Zawody turniej)  {
+        if (rodzajTurniaju.equals("Siatkowka"))
         {
             Siatkowka siatkowka = new Siatkowka();
             siatkowka.dodajRozgrywke(turniej);
@@ -51,7 +88,12 @@ public class Zawody {
             przeciaganieLiny.dodajRozgrywke(turniej);
         }
     }
-
+    /**
+     * @author Bartłomiej Busłowski, Kacper Chrost
+     * Metoda rozegrajTurniej symuluje rozgrywki każdy na każdego, półfinał oraz finał.
+     * Losuje zwycięzce każdego spotkania.
+     * Wpisuje do pliku wynik każdej dryżyny w kolejności malejącej oraz podium.
+     */
     void rozegrajTurniej(){
         int wynik;
         Random r = new Random();
@@ -82,7 +124,6 @@ public class Zawody {
         wynik=r.nextInt(2)+2;
         System.out.println("Drugi mecz polfinalu wygrala druzyna: "+druzyny.get(wynik).getNazwa());
         finaly.add(druzyny.get(wynik));
-
         for(int i=0;i<4;i++)
         {
             if(!finaly.contains(druzyny.get(i)))
@@ -95,22 +136,24 @@ public class Zawody {
         {
             Collections.swap(finaly, 2, 3);
         }
-
         wynik=r.nextInt(2);
         if(wynik==1)
         {
             Collections.swap(finaly, 0, 1);
         }
         System.out.println("Finaly wygrala druzyna: "+finaly.get(0).getNazwa());
-
         System.out.println("-----------------------------------------");
-
         for(int i=0;i<4;i++)
         {
             System.out.println("Miejsce #"+(i+1)+" zajela druzyna "+finaly.get(i).getNazwa());
         }
         System.out.println("-----------------------------------------");
     }
+    /**
+     * @author Dawid Pieciul
+     * Metoda wypisuje na ekran drużyny i ich wygrane oraz przekazuje drużynę do wpisania do pliku
+     * @param wyniki przekazuje obiekt wyniki aby móc wypisać na ekran nazwy drużyn i ich liczbę wygranych
+     */
     public void przegladDruzyn (WynikiSpotkan wyniki){
 
         for(Object i : druzyny)
@@ -121,6 +164,11 @@ public class Zawody {
             wyniki.wyslijDoPliku(druzyny.get(i));
         }
     }
+    /**
+     * @author Dawid Pieciul
+     * Metoda zamienDruzyne usuwa wybraną drużyne i dodaje nową podaną przez użytkownika
+     * Wyjątek sprawdza czy użytkownik wpisał nazwę (czy zmienna typu String nie jest pusta)
+     */
     public void zamienDruzyne(){
         int n=0, licz=0, k=0;
         System.out.println("Podaj nazwe druzyny do zamienienia");
@@ -171,6 +219,11 @@ public class Zawody {
         druzyna.setNazwa(nazwa);
         dodajDoListy(druzyna);
     }
+    /**
+     * @author Dawid Pieciul
+     * Metoda topTrzy wypisująca do pliku 4 najlpesze druzyny.
+     * @param wyniki przekazuje obiekt wyniki aby wysłać do pliku dane najlpeszych drużyn
+     */
     public void topTrzy(WynikiSpotkan wyniki){
         for(int i=0;i<4;i++)
         {

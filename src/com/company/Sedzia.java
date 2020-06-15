@@ -14,6 +14,7 @@ public class Sedzia extends Osoba{
     private int id=0;
     private int iluWyslanych=-1;
     private int max=0;
+    private int a=0;
     Scanner podaj=new Scanner(System.in);
     /**
      *
@@ -26,15 +27,44 @@ public class Sedzia extends Osoba{
      *
      * Metoda dodaj() dodaje sędziego do listy obiektów klasy Sedzia,
      * prosząc o wpisanie imienia i nazwiska z klawiatury.
-     * Zwieksza limit sedziów możliwych do wylosowanie o 1.
+     * Zwieksza limit sedziów możliwych do wylosowania o 1.
      */
     public void dodaj(){
+        int k=0;
         Osoba sedzia = new Osoba();
         String imie, nazwisko;
         System.out.println("Podaj imie nowego sedziego: ");
-        imie= podaj.nextLine();
+        do{
+            imie= podaj.nextLine();
+            try{
+                k++;
+                if(imie.isEmpty())
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Nie podano imienia. Podaj ponownie: ");
+                k=0;
+            }
+        }while(k==0);
         System.out.println("Podaj nazwisko nowego sedziego: ");
-        nazwisko= podaj.nextLine();
+        do{
+            nazwisko= podaj.nextLine();
+            try{
+                k++;
+                if(nazwisko.isEmpty())
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Nie podano nazwiska. Podaj ponownie: ");
+                k=0;
+            }
+        }while(k==0);
         sedzia.setImie(imie);
         sedzia.setNazwisko(nazwisko);
         sedzia.setId(++id);
@@ -48,16 +78,17 @@ public class Sedzia extends Osoba{
      * Zmniejsz limit sedziów możliwych do wylosowanie o 1.
      */
     public void usun(){
-        int opcje, n;
+        int n;
+        String opcje;
         do{
             System.out.println("Znasz Id sędziego którego chesz usunać? ");
             System.out.println("[1] Tak ");
             System.out.println("[2] Nie ");
-            opcje = podaj.nextInt();
+            opcje = podaj.nextLine();
             n=0;
             switch(opcje)
             {
-                case 1:
+                case "1":
                     System.out.println("Podaj Id sedziego do usuniecia:  ");
                     try{
                         usunPom();
@@ -66,7 +97,7 @@ public class Sedzia extends Osoba{
                         System.out.println(e.getMessage());
                     }
                     break;
-                case 2:
+                case "2":
                     System.out.println("Oto lista sedziow:   ");
                     przeglad();
                     System.out.println("Podaj Id sedziego do usuniecia:  ");
@@ -98,9 +129,9 @@ public class Sedzia extends Osoba{
      *
      * Metoda wczytajZPliku() wczytuje sedziów do listy obiektów klasy Sedzia
      * oraz ustawia limit sedziów.
-     * @throws FileNotFoundException Obsługa braku pliku.
+     * Wyjątek uruchamia się podczas barku pliku.
      */
-    public void wczytajZPlikuS() throws FileNotFoundException {
+    public void wczytajZPlikuS() {
         Scanner plik = null;
         try{
             plik = new Scanner(new File("sedziowie.txt"));
@@ -141,6 +172,7 @@ public class Sedzia extends Osoba{
      * niepowtarzalny numer (id)
      */
     public void usunPom(){
+        a++;
         int idx;
         idx = podaj.nextInt();
         int usun = 0;
@@ -151,7 +183,7 @@ public class Sedzia extends Osoba{
                 usun=idx;
             }
         }
-        sedziowie.remove(usun-1);
+        sedziowie.remove(usun-a);
         max--;
     }
     /**

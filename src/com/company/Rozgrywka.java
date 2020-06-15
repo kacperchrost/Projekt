@@ -4,7 +4,6 @@ package com.company;
  * @author klasy Dawid Pieciul, implementacja wyjątków Kacper Chrost
  * Klasa odpowiedzialna za tworzenie rozgrywki
  */
-
 public abstract class Rozgrywka extends Zawody {
     /**
      *

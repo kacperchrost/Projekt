@@ -15,7 +15,6 @@ public class Druzyna {
     public Druzyna(){
 
     }
-
     /**
      *
      * @return zwraca nazwę drużyny
@@ -24,7 +23,6 @@ public class Druzyna {
     public String getNazwa(){
         return nazwa;
     }
-
     /**
      *
      * @return zwraca liczbę wygranych meczy
@@ -33,7 +31,6 @@ public class Druzyna {
     public int getLiczbaWygranych() {
         return liczbaWygranych;
     }
-
     /**
      * Metoda zwiększająca liczbę wygranych dla konkretnej drużyny
      */
@@ -41,7 +38,6 @@ public class Druzyna {
     {
         liczbaWygranych++;
     }
-
     /**
      *
      * @param nazwa przekazywanie nazwy drużyny
@@ -52,25 +48,3 @@ public class Druzyna {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

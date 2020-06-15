@@ -10,9 +10,9 @@ public class Plazownie {
     /**
      * @author Bartłomiej Busłowski
      * metoda plazuj() wypisuje zawartość pliku plaza.txt na ekran.
-     * @throws FileNotFoundException Obsługa barku pliku.
+     * Wyjątek uruchamia się podczas barku pliku.
      */
-    public void plazuj() throws FileNotFoundException {
+    public void plazuj(){
        Scanner in = null;
        try{
            in = new Scanner(new File("plaza.txt"));
