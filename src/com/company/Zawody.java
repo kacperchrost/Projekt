@@ -8,7 +8,7 @@ import java.util.*;
 public class Zawody {
     private String rodzajTurniaju;
     private String nazwaTurnieju;
-    private static LinkedList<Druzyna> druzyny;              //list druzyn danego turnieju
+    private static LinkedList<Druzyna> druzyny;
     Scanner scan = new Scanner(System.in);
     private LinkedList<Druzyna> finaly = new LinkedList<Druzyna>();
     /**
