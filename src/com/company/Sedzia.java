@@ -135,7 +135,6 @@ public class Sedzia extends Osoba{
         Scanner plik = null;
         try{
             plik = new Scanner(new File("sedziowie.txt"));
-            Scanner scan = new Scanner(String.valueOf(plik));
         }
         catch(FileNotFoundException e){
             System.out.println("Blad pliku: "+e.getMessage());
@@ -174,7 +173,6 @@ public class Sedzia extends Osoba{
     public void usunPom(){
         int idx;
         int a=0;
-        int b=0;
         idx = podaj.nextInt();
         if (max<=3){
             System.out.println("Nie moze być mniej niż 3 sedziów bo nie uda sie rozegrać turnieju na przykład z siatkówki");
@@ -184,12 +182,11 @@ public class Sedzia extends Osoba{
         {
             if (idx==((Osoba)i).getId())
             {
-                sedziowie.remove(sedziowie.indexOf(i));
+                sedziowie.remove(i);
                 max--;
                 a++;
                 break;
             }
-            b++;
         }
         if (a==0){
             sedziowie.remove(-1);
