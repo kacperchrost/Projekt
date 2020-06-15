@@ -1,6 +1,17 @@
 package com.company;
 
-public class Rozgrywka extends Zawody {
+/**
+ * @author klasy Dawid Pieciul, implementacja wyjątków Kacper Chrost
+ * Klasa odpowiedzialna za tworzenie rozgrywki
+ */
+
+public abstract class Rozgrywka extends Zawody {
+    /**
+     *
+     * @param turniej obiekt turnieju przekazywany do metody aby umożliwić dodawanie drużyn do turnieju oraz jego utworzenie
+     * Metoda prosi użytkownika o podanie nazwy turnieju oraz o wprowadzenie drużyn biorących udział w zawodach
+     * Wyjątek sprawdza czy użytkownik wpisał nazwę (czy zmienna typu String nie jest pusta)
+     */
     public void dodajRozgrywke(Zawody turniej){
         int k=0;
         System.out.println("Wlasnie jest przygotowywany i za chwile zostanie rozgrywany turniej.");
