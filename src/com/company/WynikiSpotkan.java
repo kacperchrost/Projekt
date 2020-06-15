@@ -27,7 +27,7 @@ public class WynikiSpotkan extends Zawody {
     /**
      *
      * @param nazwa przekazywanie nazwy pliku, który ma zostać otwarty
-     * @throws FileNotFoundException wyrzuca oraz obsługuje wujątek gdy oprogram ma problem z plikiem
+     * @throws FileNotFoundException wyrzuca oraz obsługuje wujątek gdy program ma problem z plikiem
      * Konstruktor jednoparametrowy tworzący plik o nazwie odpowiadającej dyscyplinie
      */
     public WynikiSpotkan(String nazwa){

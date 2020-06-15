@@ -5,11 +5,12 @@ package com.company;
  * Klasa odpowiedzialna za tworzenie rozgrywki
  */
 
-public class Rozgrywka extends Zawody {
+public abstract class Rozgrywka extends Zawody {
     /**
      *
      * @param turniej obiekt turnieju przekazywany do metody aby umożliwić dodawanie drużyn do turnieju oraz jego utworzenie
      * Metoda prosi użytkownika o podanie nazwy turnieju oraz o wprowadzenie drużyn biorących udział w zawodach
+     * Wyjątek sprawdza czy użytkownik wpisał nazwę (czy zmienna typu String nie jest pusta)
      */
     public void dodajRozgrywke(Zawody turniej){
         int k=0;
