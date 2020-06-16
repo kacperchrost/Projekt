@@ -94,7 +94,7 @@ public class Zawody {
      * Losuje zwycięzce każdego spotkania.
      * Wpisuje do pliku wynik każdej dryżyny w kolejności malejącej oraz podium.
      */
-    void rozegrajTurniej(){
+    public void rozegrajTurniej(){
         int wynik;
         Random r = new Random();
         for(int i=0;i<8;i++)
